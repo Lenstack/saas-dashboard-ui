@@ -73,7 +73,7 @@ export default function Layout({children}: ILayoutProps) {
                     </div>
                     <Navbar className="navbar -mb-px flex space-x-2.5 overflow-x-auto space-x-0">
                         <Navbar.Item href="/" className="border-b pb-2.5 border-green-300">Overview</Navbar.Item>
-                        <Navbar.Item href="/">Settings</Navbar.Item>
+                        <Navbar.Item href="/settings">Settings</Navbar.Item>
                     </Navbar>
                 </header>
             </div>
