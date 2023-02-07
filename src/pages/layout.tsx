@@ -7,7 +7,7 @@ interface ILayoutProps {
     children: ReactNode
 }
 
-export const Layout = ({children}: ILayoutProps) => {
+export default function Layout({children}: ILayoutProps) {
     return (
         <div className="flex flex-col px-3 gap-10 h-screen bg-white dark:bg-[#111111] dark:text-white">
             <div className="relative z-40 border-b-2 dark:border-[#1f1f1f]">
@@ -38,7 +38,7 @@ export const Layout = ({children}: ILayoutProps) => {
                                 </summary>
                                 <div
                                     className="absolute z-40 mt-1 w-60 flex flex-col gap-6 p-5 rounded right-0
-                                    bg-[#fafafa] dark:bg-[#111111] border dark:border-[#1f1f1f]">
+                                    bg-[#fafafa] dark:bg-[#161616] border dark:border-[#1f1f1f]">
                                     <ul className="flex flex-col gap-2.5">
                                         <li>
                                             <Link href="/">Setting</Link>
@@ -56,7 +56,8 @@ export const Layout = ({children}: ILayoutProps) => {
                                             <Link href="/">Sign Out</Link>
                                         </li>
                                     </ul>
-                                    <div className="flex justify-between border dark:border-[#1f1f1f] p-1.5 bg-white dark:bg-[#111111]">
+                                    <div
+                                        className="flex justify-between border dark:border-[#1f1f1f] p-1.5 bg-white dark:bg-[#111111]">
                                         <label>
                                             <span>Theme</span>
                                         </label>
