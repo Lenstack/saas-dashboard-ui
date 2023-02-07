@@ -9,9 +9,9 @@ interface ILayoutProps {
 
 export default function Layout({children}: ILayoutProps) {
     return (
-        <div className="flex flex-col px-3 gap-10 h-screen bg-white dark:bg-[#111111] dark:text-white">
-            <div className="relative z-40 border-b-2 dark:border-[#1f1f1f]">
-                <header className="p-8 flex flex-col gap-6">
+        <div className="flex flex-col gap-10 h-screen bg-white dark:bg-[#111111] dark:text-white">
+            <div className="relative border-b-2 pb-8 dark:border-[#1f1f1f]">
+                <header className="px-10 pt-10 flex flex-col gap-5">
                     <div className="flex items-center gap-3">
                         <div className="flex shrink-0 items-center">
                             <Link href="/">
@@ -71,13 +71,17 @@ export default function Layout({children}: ILayoutProps) {
                             </details>
                         </div>
                     </div>
-                    <Navbar className="navbar -mb-px flex space-x-2.5 overflow-x-auto space-x-0">
-                        <Navbar.Item href="/" className="border-b pb-2.5 border-green-300">Overview</Navbar.Item>
-                        <Navbar.Item href="/settings">Settings</Navbar.Item>
+                    <Navbar className="navbar flex overflow-x-auto">
+                        <Navbar.Item href="/" className="text-blue-600 dark:text-green-400">
+                            Overview
+                        </Navbar.Item>
+                        <Navbar.Item href="/settings">
+                            Settings
+                        </Navbar.Item>
                     </Navbar>
                 </header>
             </div>
-            <main className="px-8">
+            <main className="px-10">
                 {children}
             </main>
         </div>
