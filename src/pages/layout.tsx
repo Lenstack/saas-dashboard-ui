@@ -76,7 +76,7 @@ export const Layout = ({children}: ILayoutProps) => {
                     </Navbar>
                 </header>
             </div>
-            <main className="p-8">
+            <main className="px-8">
                 {children}
             </main>
         </div>
