@@ -16,7 +16,7 @@ export default function Layout({children}: ILayoutProps) {
                         <div className="flex shrink-0 items-center">
                             <Link href="/">
                                 <Avatar size={32} name="Avatar" variant="marble"
-                                        colors={["#000000", "#2f2f2f", "#37de9e", "#e5e5e5", "#C20D90"]}/>
+                                        colors={["#000000", "#3A3A3A", "#A86565", "#C0C0C0"]}/>
                             </Link>
                         </div>
                         <div className="flex flex-grow items-center">
@@ -30,8 +30,8 @@ export default function Layout({children}: ILayoutProps) {
                                     <div className="relative inline-flex flex-shrink-0 rounded align-top">
                                         <div className="grid">
                                             <div className="col-start-1 col-end-1 row-start-1 row-end-1 flex">
-                                                <Avatar size={32} name="Avatar" variant="bauhaus"
-                                                        colors={["#be1919", "#ffffff", "#4fb37a", "#272727", "#C20D90"]}/>
+                                                <Avatar size={32} name="Avatar" variant="beam"
+                                                        colors={["#000000", "#3A3A3A", "#A86565", "#C0C0C0"]}/>
                                             </div>
                                         </div>
                                     </div>
@@ -57,7 +57,7 @@ export default function Layout({children}: ILayoutProps) {
                                         </li>
                                     </ul>
                                     <div
-                                        className="flex justify-between border dark:border-[#1f1f1f] p-1.5 bg-white dark:bg-[#111111]">
+                                        className="flex justify-between border dark:border-[#1f1f1f] p-1.5 bg-white dark:bg-[#161616]">
                                         <label>
                                             <span>Theme</span>
                                         </label>
