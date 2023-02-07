@@ -11,4 +11,11 @@
 }
 
 @layer components {
+    .navbar {
+        @apply flex gap-5;
+    }
+
+    .card {
+        @apply p-2.5 border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] rounded;
+    }
 }
