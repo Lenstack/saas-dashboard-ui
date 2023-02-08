@@ -3,7 +3,7 @@ import {CloudArrowUpIcon} from "@heroicons/react/24/outline"
 
 export default function Home() {
     return (
-        <section className="grid lg:grid-cols-6 gap-2.5">
+        <section className="grid lg:grid-cols-6 gap-5">
             <Card className="card lg:col-start-2 lg:col-end-3">
                 <Card.Header className="text-center p-5">
                     <h1>Choose yours excel files</h1>
