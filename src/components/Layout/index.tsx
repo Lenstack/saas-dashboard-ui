@@ -1,4 +1,4 @@
-import {Navbar} from "@/components"
+import {Card, Navbar} from "@/components"
 import {ILayoutProps} from "@/interfaces"
 import Avatar from "boring-avatars"
 import Link from "next/link"
@@ -52,7 +52,7 @@ export const LayoutDashboard = ({children}: ILayoutProps) => {
                                         <Link href="/">Send Feedback</Link>
                                     </li>
                                     <li>
-                                        <Link href="/">Sign Out</Link>
+                                        <Link href="/sign-in">Sign Out</Link>
                                     </li>
                                 </ul>
                                 <div
@@ -90,17 +90,40 @@ export const LayoutHome = ({children}: ILayoutProps) => {
     return (
         <section className="flex flex-col md:flex-row-reverse md:h-screen">
             <aside
-                className="flex items-start w-full px-4 mx-auto md:px-0 md:items-center md:w-1/3">
-                <div
-                    className="flex flex-row items-center w-full max-w-sm
-                    py-4 mx-auto md:mx-0 my-auto min-w-min relative md:-left-6
-                    pt-4 md:py-4 transform origin-left bg-[#FFFFFF] dark:bg-[#111111]">
-                    <div className="flex items-center space-x-4">
-                        <span className="text-blue-300">Lorem ipsum dolor sit amet.</span>
+                className="flex flex-col gap-1.5 items-center justify-center w-full px-4 mx-auto md:px-0 md:items-center md:w-1/3 space-x-2.5">
+                <div className="flex items-center space-x-2.5">
+                    <Avatar size={50} name="Avatar" variant="sunset"
+                            colors={["#000000", "#3A3A3A", "#A86565", "#C0C0C0"]}/>
+                    <h1 className="text-xl">Welcome to lensaas.</h1>
+                </div>
+                <div className="hidden md:flex md:flex-col p-5 gap-2.5">
+                    <h2 className="text text-center">News</h2>
+                    <div className="flex flex-col gap-5">
+                        <div className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] rounded p-5 flex flex-col gap-5">
+                            <div className="flex justify-between">
+                                <h2 className="text">New Module Settings</h2>
+                                <span>2023-01-02</span>
+                            </div>
+                            <p className="text-sm">Create your first tenant and start using lensaas.</p>
+                        </div>
+                        <div className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] rounded p-5 flex flex-col gap-5">
+                            <div className="flex justify-between">
+                                <h2 className="text">New Module Settings</h2>
+                                <span>2023-01-02</span>
+                            </div>
+                            <p className="text-sm">Create your first tenant and start using lensaas.</p>
+                        </div>
+                        <div className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] rounded p-5 flex flex-col gap-5">
+                            <div className="flex justify-between">
+                                <h2 className="text">New Module Settings</h2>
+                                <span>2023-01-02</span>
+                            </div>
+                            <p className="text-sm">Create your first tenant and start using lensaas.</p>
+                        </div>
                     </div>
                 </div>
             </aside>
-            <main className="justify-center items-center px-4 md:px-0 md:flex md:w-2/3 md:border-r md:border-blue-300">
+            <main className="flex justify-center items-center w-full md:w-2/3 border-r border dark:border-[#1f1f1f]">
                 {children}
             </main>
         </section>
