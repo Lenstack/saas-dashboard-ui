@@ -1,4 +1,4 @@
-import {Card, Navbar} from "@/components"
+import {Navbar} from "@/components"
 import {ILayoutProps} from "@/interfaces"
 import Avatar from "boring-avatars"
 import Link from "next/link"

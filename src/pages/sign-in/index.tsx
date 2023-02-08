@@ -1,12 +1,10 @@
 import {Form, LayoutHome} from "@/components";
 import {FormEvent} from "react";
-import {router} from "next/client";
 
 export default function SignIn() {
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         console.log(event.target)
-        router.push('/dashboard').then(r => console.log(r))
     }
 
     return (
