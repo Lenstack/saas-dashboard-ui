@@ -7,7 +7,7 @@ interface ILayoutProps {
     children: ReactNode
 }
 
-export const Layout = ({children}: ILayoutProps) => {
+export const LayoutDashboard = ({children}: ILayoutProps) => {
     return (
         <section className="h-screen w-full flex flex-col">
             <header className="p-10 flex flex-col gap-5 border-b dark:border-[#1f1f1f]">
@@ -84,6 +84,21 @@ export const Layout = ({children}: ILayoutProps) => {
                 </Navbar>
             </header>
             <main className="p-10 flex flex-col">
+                {children}
+            </main>
+        </section>
+    )
+}
+
+export const LayoutHome = ({children}: ILayoutProps) => {
+    return (
+        <section className="flex">
+            <aside className="h-screen w-full hidden lg:flex">
+                <div className="flex items-center justify-center h-screen">
+                    Lorem ipsum dolor sit amet.
+                </div>
+            </aside>
+            <main className="w-full">
                 {children}
             </main>
         </section>
