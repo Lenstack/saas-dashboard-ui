@@ -18,16 +18,16 @@ export const Layout = ({children}: ILayoutProps) => {
                                     colors={["#000000", "#3A3A3A", "#A86565", "#C0C0C0"]}/>
                         </Link>
                     </div>
-                    <div className="flex flex-grow items-center">
+                    <div className="flex flex-grow items-center gap-2.5">
                         <Link href="/">Tenancy</Link>
-                        <div className="">
+                        <div>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                  xmlns="http://www.w3.org/2000/svg" className="block shrink-0">
                                 <path d="M9.75 20.25L14.25 3.75" stroke="currentColor" strokeWidth="1.5"
                                       strokeLinecap="round"></path>
                             </svg>
                         </div>
-                        <div className="">
+                        <div>
                             <Link href="/">Overview</Link>
                         </div>
                     </div>
@@ -60,11 +60,11 @@ export const Layout = ({children}: ILayoutProps) => {
                                     </li>
                                 </ul>
                                 <div
-                                    className="flex justify-between border dark:border-[#1f1f1f] p-1.5 bg-white dark:bg-[#161616]">
+                                    className="flex justify-between border rounded dark:border-[#1f1f1f] p-1.5 bg-white dark:bg-[#161616]">
                                     <label>
                                         <span>Theme</span>
                                     </label>
-                                    <select className="bg-white dark:bg-[#111111]">
+                                    <select className="bg-white dark:bg-[#111111] px-2.5">
                                         <option value="system">System</option>
                                         <option value="dark">Dark</option>
                                         <option value="light">Light</option>
@@ -75,8 +75,11 @@ export const Layout = ({children}: ILayoutProps) => {
                     </div>
                 </div>
                 <Navbar className="navbar flex overflow-x-auto">
-                    <Navbar.Item href="/">
+                    <Navbar.Item href="/" className="whitespace-nowrap border-b-2 pb-2.5 border-blue-600 font-semibold">
                         Overview
+                    </Navbar.Item>
+                    <Navbar.Item href="/">
+                        Settings
                     </Navbar.Item>
                 </Navbar>
             </header>
