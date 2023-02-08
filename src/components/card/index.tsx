@@ -13,26 +13,26 @@ export const Card = ({children, ...restProps}: ICardProps) => {
     )
 }
 
-Card.Header = (props: { children: ReactNode }) => {
+Card.Header = ({children, ...restProps}: ICardProps) => {
     return (
-        <div className="card__header">
-            {props.children}
+        <div className="card__header" {...restProps}>
+            {children}
         </div>
     )
 }
 
-Card.Body = (props: { children: ReactNode }) => {
+Card.Body = ({children, ...restProps}: ICardProps) => {
     return (
-        <div className="card__body">
-            {props.children}
+        <div className="card__body" {...restProps}>
+            {children}
         </div>
     )
 }
 
-Card.Footer = (props: { children: ReactNode }) => {
+Card.Footer = ({children, ...restProps}: ICardProps) => {
     return (
-        <div className="card__footer">
-            {props.children}
+        <div className="card__footer" {...restProps}>
+            {children}
         </div>
     )
 }

@@ -16,6 +16,18 @@
     }
 
     .card {
-        @apply p-2.5 border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] rounded;
+        @apply border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] rounded;
+    }
+
+    .card__header {
+        @apply p-5 bg-[#fafafa] dark:bg-[#161616] rounded-t
+    }
+
+    .card__body {
+        @apply p-5 bg-[#ffffff] dark:bg-[#111111]
+    }
+
+    .card__footer {
+        @apply p-5 bg-[#fafafa] dark:bg-[#161616] rounded-b
     }
 }
