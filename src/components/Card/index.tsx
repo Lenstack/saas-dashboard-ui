@@ -1,9 +1,4 @@
-import {ReactNode} from "react";
-
-interface ICardProps {
-    className?: string;
-    children: ReactNode;
-}
+import {ICardBodyProps, ICardFooterProps, ICardHeaderProps, ICardProps} from "@/interfaces";
 
 export const Card = ({children, ...restProps}: ICardProps) => {
     return (
@@ -13,7 +8,7 @@ export const Card = ({children, ...restProps}: ICardProps) => {
     )
 }
 
-Card.Header = ({children, ...restProps}: ICardProps) => {
+Card.Header = ({children, ...restProps}: ICardHeaderProps) => {
     return (
         <div className="card__header" {...restProps}>
             {children}
@@ -21,7 +16,7 @@ Card.Header = ({children, ...restProps}: ICardProps) => {
     )
 }
 
-Card.Body = ({children, ...restProps}: ICardProps) => {
+Card.Body = ({children, ...restProps}: ICardBodyProps) => {
     return (
         <div className="card__body" {...restProps}>
             {children}
@@ -29,7 +24,7 @@ Card.Body = ({children, ...restProps}: ICardProps) => {
     )
 }
 
-Card.Footer = ({children, ...restProps}: ICardProps) => {
+Card.Footer = ({children, ...restProps}: ICardFooterProps) => {
     return (
         <div className="card__footer" {...restProps}>
             {children}

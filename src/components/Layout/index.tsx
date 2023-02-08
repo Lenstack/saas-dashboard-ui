@@ -1,11 +1,7 @@
-import {ReactNode} from "react";
-import {Navbar} from "@/components";
+import {Navbar} from "@/components"
+import {ILayoutProps} from "@/interfaces"
 import Avatar from "boring-avatars"
-import Link from "next/link";
-
-interface ILayoutProps {
-    children: ReactNode
-}
+import Link from "next/link"
 
 export const LayoutDashboard = ({children}: ILayoutProps) => {
     return (
@@ -92,13 +88,19 @@ export const LayoutDashboard = ({children}: ILayoutProps) => {
 
 export const LayoutHome = ({children}: ILayoutProps) => {
     return (
-        <section className="flex">
-            <aside className="h-screen w-full hidden lg:flex">
-                <div className="flex items-center justify-center h-screen">
-                    Lorem ipsum dolor sit amet.
+        <section className="flex flex-col md:flex-row-reverse md:h-screen">
+            <aside
+                className="flex items-start w-full px-4 mx-auto md:px-0 md:items-center md:w-1/3">
+                <div
+                    className="flex flex-row items-center w-full max-w-sm
+                    py-4 mx-auto md:mx-0 my-auto min-w-min relative md:-left-6
+                    pt-4 md:py-4 transform origin-left bg-[#FFFFFF] dark:bg-[#111111]">
+                    <div className="flex items-center space-x-4">
+                        <span className="text-blue-300">Lorem ipsum dolor sit amet.</span>
+                    </div>
                 </div>
             </aside>
-            <main className="w-full">
+            <main className="justify-center items-center px-4 md:px-0 md:flex md:w-2/3 md:border-r md:border-blue-300">
                 {children}
             </main>
         </section>

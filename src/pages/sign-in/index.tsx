@@ -1,6 +1,12 @@
-import {Card, LayoutHome} from "@/components";
+import {Card, Form, LayoutHome} from "@/components";
+import {FormEvent} from "react";
 
 export default function SignIn() {
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+        console.log(event.target)
+    }
+
     return (
         <LayoutHome>
             <Card>
@@ -8,26 +14,19 @@ export default function SignIn() {
                     <h1>Sign In</h1>
                 </Card.Header>
                 <Card.Body>
-                    <div className="flex flex-col">
-                        <label htmlFor="email" className="text-sm font-semibold">Email</label>
-                        <input type="email" id="email" className="border rounded p-2.5 mt-1.5"/>
-                    </div>
-                    <div className="flex flex-col mt-5">
-                        <label htmlFor="password" className="text-sm font-semibold">Password</label>
-                        <input type="password" id="password" className="border rounded p-2.5 mt-1.5"/>
-                    </div>
-                    <div className="flex justify-between mt-5">
-                        <div className="flex items-center">
-                            <input type="checkbox" id="remember" className="mr-2"/>
-                            <label htmlFor="remember" className="text-sm font-semibold">Remember me</label>
-                        </div>
-                        <div>
-                            <a href="#" className="text-sm font-semibold">Forgot password?</a>
-                        </div>
-                    </div>
-                    <div className="flex justify-center mt-5">
-                        <button className="bg-blue-600 text-white rounded p-2.5 w-full">Sign In</button>
-                    </div>
+                    <Form onSubmit={handleSubmit} method="post">
+                        <Form.Content>
+                            <Form.Label htmlFor="email">Email</Form.Label>
+                            <Form.Input type="email" id="email" name="email" placeholder="Email"/>
+                        </Form.Content>
+                        <Form.Content>
+                            <Form.Label htmlFor="password">Password</Form.Label>
+                            <Form.Input type="password" id="password" name="password" placeholder="Password"/>
+                        </Form.Content>
+                        <Form.Content>
+                            <Form.Button type="submit">Sign In</Form.Button>
+                        </Form.Content>
+                    </Form>
                 </Card.Body>
             </Card>
         </LayoutHome>

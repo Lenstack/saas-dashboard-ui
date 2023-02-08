@@ -1,9 +1,15 @@
-import {LayoutHome} from "@/components";
+import {Card, LayoutHome} from "@/components";
 
 export default function SignUp() {
     return (
         <LayoutHome>
-            <div>Sign Up</div>
+            <Card>
+                <Card.Header>
+                    <h1>Sign Up</h1>
+                </Card.Header>
+                <Card.Body>
+                </Card.Body>
+            </Card>
         </LayoutHome>
     )
 }
