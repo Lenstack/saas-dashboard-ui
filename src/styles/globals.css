@@ -8,6 +8,10 @@
     html {
         @apply bg-[#FFFFFF] dark:bg-[#111111] text-[#000000] dark:text-[#FFFFFF] font-sans;
     }
+
+    input {
+        @apply bg-[#FFFFFF] dark:bg-[#111111] border dark:border-[#1f1f1f] rounded p-2.5 w-full
+    }
 }
 
 @layer components {
@@ -29,5 +33,9 @@
 
     .card__footer {
         @apply p-5 bg-[#fafafa] dark:bg-[#161616] rounded-b
+    }
+
+    .btn {
+        @apply bg-[#161616] text-white dark:bg-[#875858] border dark:border-[#1f1f1f] rounded p-3 w-full
     }
 }

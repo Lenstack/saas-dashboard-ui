@@ -60,7 +60,7 @@ Form.Select = ({options, ...restProps}: IFormSelectProps) => {
 
 Form.Button = ({children, ...restProps}: IFormButtonProps) => {
     return (
-        <button {...restProps}>
+        <button className="btn" {...restProps}>
             {children}
         </button>
     )
