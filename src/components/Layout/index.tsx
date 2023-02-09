@@ -71,7 +71,8 @@ export const LayoutDashboard = ({children}: ILayoutProps) => {
                     </div>
                 </div>
                 <Navbar className="navbar flex overflow-x-auto">
-                    <Navbar.Item href="/" className="whitespace-nowrap border-b-2 pb-2.5 border-[#A86565] font-semibold">
+                    <Navbar.Item href="/"
+                                 className="whitespace-nowrap border-b-2 pb-2.5 border-[#A86565] font-semibold">
                         Overview
                     </Navbar.Item>
                     <Navbar.Item href="/">
@@ -92,12 +93,9 @@ export const LayoutHome = ({children}: ILayoutProps) => {
             <aside
                 className="hidden p-5 w-full h-screen md:flex flex-col justify-center items-center gap-1.5 w-1/3 space-x-2.5">
                 <div className="flex items-center space-x-2.5">
-                    <Avatar size={50} name="Avatar" variant="sunset"
-                            colors={["#000000", "#3A3A3A", "#A86565", "#C0C0C0"]}/>
-                    <h1 className="text-xl">Welcome to lensaas.</h1>
+                    <h1 className="text-xl">News</h1>
                 </div>
                 <div className="md:flex md:flex-col p-5 gap-2.5">
-                    <h2 className="text text-center">News</h2>
                     <div className="flex flex-col gap-5">
                         <div
                             className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] rounded p-5 flex flex-col gap-5">
