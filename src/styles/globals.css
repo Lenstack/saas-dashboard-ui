@@ -36,6 +36,6 @@
     }
 
     .btn {
-        @apply bg-[#161616] text-white dark:bg-[#875858] border dark:border-[#1f1f1f] rounded p-3 w-full
+        @apply bg-[#161616] text-white dark:bg-[#A86565] border dark:border-[#1f1f1f] rounded p-3 w-full
     }
 }

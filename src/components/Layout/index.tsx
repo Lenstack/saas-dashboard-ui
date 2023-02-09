@@ -14,7 +14,7 @@ export const LayoutDashboard = ({children}: ILayoutProps) => {
                                     colors={["#000000", "#3A3A3A", "#A86565", "#C0C0C0"]}/>
                         </Link>
                     </div>
-                    <div className="flex flex-grow items-center gap-2.5">
+                    <div className="flex flex-grow items-center">
                         <Link href="/">Tenancy</Link>
                         <div>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -71,7 +71,7 @@ export const LayoutDashboard = ({children}: ILayoutProps) => {
                     </div>
                 </div>
                 <Navbar className="navbar flex overflow-x-auto">
-                    <Navbar.Item href="/" className="whitespace-nowrap border-b-2 pb-2.5 border-blue-600 font-semibold">
+                    <Navbar.Item href="/" className="whitespace-nowrap border-b-2 pb-2.5 border-[#A86565] font-semibold">
                         Overview
                     </Navbar.Item>
                     <Navbar.Item href="/">
