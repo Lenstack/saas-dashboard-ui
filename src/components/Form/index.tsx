@@ -2,11 +2,12 @@ import {
     IFormButtonProps,
     IFormContentProps, IFormErrorProps,
     IFormInputProps,
-    IFormLabelProps,
+    IFormLabelProps, IFormLinkProps,
     IFormProps,
     IFormSelectProps,
     IFormTextareaProps
 } from "@/interfaces"
+import Link from "next/link";
 
 export const Form = ({method, onSubmit, children, ...restProps}: IFormProps) => {
     return (
@@ -63,6 +64,14 @@ Form.Button = ({children, ...restProps}: IFormButtonProps) => {
         <button className="btn" {...restProps}>
             {children}
         </button>
+    )
+}
+
+Form.Link = ({to, children, ...restProps}: IFormLinkProps) => {
+    return (
+        <Link href={to} {...restProps}>
+            {children}
+        </Link>
     )
 }
 

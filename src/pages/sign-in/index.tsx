@@ -21,7 +21,11 @@ export default function SignIn() {
                         <Form.Input type="password" id="password" name="password" placeholder="Password"/>
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5">
+                        <Form.Link to="/sign-in">Forgot your password?</Form.Link>
                         <Form.Button type="submit">Sign In</Form.Button>
+                    </Form.Content>
+                    <Form.Content className="flex flex-col gap-2.5 items-center">
+                        <Form.Link to="/sign-up">Dont have an account? Sign Up</Form.Link>
                     </Form.Content>
                 </Form>
             </section>

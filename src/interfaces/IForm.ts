@@ -44,6 +44,12 @@ export interface IFormButtonProps {
     children: ReactNode
 }
 
+export interface IFormLinkProps {
+    className?: string
+    to: string
+    children: ReactNode
+}
+
 export interface IFormErrorProps {
     className?: string
     children: ReactNode

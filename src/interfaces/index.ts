@@ -6,6 +6,7 @@ export type {
     IFormTextareaProps,
     IFormSelectProps,
     IFormButtonProps,
+    IFormLinkProps,
     IFormErrorProps
 } from "./IForm"
 

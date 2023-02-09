@@ -28,6 +28,9 @@ export default function SignUp() {
                     <Form.Content className="flex flex-col gap-2.5">
                         <Form.Button type="submit">Sign Up</Form.Button>
                     </Form.Content>
+                    <Form.Content className="flex flex-col gap-2.5 items-center">
+                        <Form.Link to="/sign-in">Already have an account? Sign In</Form.Link>
+                    </Form.Content>
                 </Form>
             </section>
         </LayoutHome>
