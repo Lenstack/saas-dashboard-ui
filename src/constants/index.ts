@@ -1,0 +1,1 @@
+export {MODULE_ROUTES} from "./module.routes";

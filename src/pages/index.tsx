@@ -6,7 +6,7 @@ export default function Home() {
         <div className="w-full h-screen flex flex-col">
             <header className="p-10">
                 <Navbar className="flex justify-between items-center gap-2.5">
-                    <Navbar.Content className="flex items-center space-x-5">
+                    <Navbar.Content className="flex items-center space-x-2.5">
                         <Navbar.Item href="/">
                             <Avatar size={32} name="Avatar" variant="marble"
                                     colors={["#000000", "#3A3A3A", "#A86565", "#C0C0C0"]}/>
