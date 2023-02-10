@@ -1,5 +1,6 @@
 import {Navbar} from "@/components";
 import Avatar from "boring-avatars";
+import {AUTH_ROUTES, HOME_ROUTES} from "@/constants/module.routes";
 
 export default function Home() {
     return (
@@ -11,29 +12,23 @@ export default function Home() {
                             <Avatar size={32} name="Avatar" variant="marble"
                                     colors={["#000000", "#3A3A3A", "#A86565", "#C0C0C0"]}/>
                         </Navbar.Item>
-                        <Navbar.Item href="/">Home</Navbar.Item>
-                        <Navbar.Item href="/">Plans</Navbar.Item>
-                        <Navbar.Item href="/dashboard">Dashboard</Navbar.Item>
+                        {
+                            HOME_ROUTES.map((route, index) => (
+                                <Navbar.Item key={index} href={route.to}>{route.name}</Navbar.Item>
+                            ))
+                        }
                     </Navbar.Content>
                     <Navbar.Content className="flex items-center space-x-5">
-                        <Navbar.Item href="/sign-in">Sign In</Navbar.Item>
-                        <Navbar.Item href="/sign-up">Sign Up</Navbar.Item>
+                        {
+                            AUTH_ROUTES.map((route, index) => (
+                                <Navbar.Item key={index} href={route.to}>{route.name}</Navbar.Item>
+                            ))
+                        }
                     </Navbar.Content>
                 </Navbar>
             </header>
             <main className="p-10">
-                <section className="">
-                    Hero Section
-                </section>
-                <section className="">
-                    How it works Section
-                </section>
-                <section className="">
-                    Customers Section
-                </section>
-                <section className="">
-                    Pricing Section
-                </section>
+
             </main>
             <footer className="p-10">
                 Footer Section

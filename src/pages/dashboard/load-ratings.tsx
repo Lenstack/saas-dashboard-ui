@@ -1,9 +1,10 @@
-import {Card, LayoutDashboard} from "@/components";
+import {Card} from "@/components";
 import {CloudArrowUpIcon} from "@heroicons/react/24/outline";
+import Layout from "./layout";
 
-export default function LoadRatings(){
+export default function LoadRatings() {
     return (
-        <LayoutDashboard>
+        <Layout>
             <section className="grid lg:grid-cols-6 gap-5">
                 <Card className="card lg:col-start-2 lg:col-end-3">
                     <Card.Header className="text-center p-5">
@@ -52,6 +53,6 @@ export default function LoadRatings(){
                     </Card.Footer>
                 </Card>
             </section>
-        </LayoutDashboard>
+        </Layout>
     )
 }

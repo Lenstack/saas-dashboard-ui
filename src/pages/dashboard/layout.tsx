@@ -1,9 +1,9 @@
-import {Navbar} from "@/components"
-import {ILayoutProps} from "@/interfaces"
-import Avatar from "boring-avatars"
-import Link from "next/link"
+import {ILayoutProps} from "@/interfaces";
+import Link from "next/link";
+import Avatar from "boring-avatars";
+import {Navbar} from "@/components";
 
-export const LayoutDashboard = ({children}: ILayoutProps) => {
+export default function Layout({children}: ILayoutProps) {
     return (
         <section className="h-screen w-full flex flex-col">
             <header className="p-10 flex flex-col gap-5 border-b dark:border-[#1f1f1f]">
@@ -71,60 +71,16 @@ export const LayoutDashboard = ({children}: ILayoutProps) => {
                     </div>
                 </div>
                 <Navbar className="navbar flex overflow-x-auto">
-                    <Navbar.Item href="/"
+                    <Navbar.Item href="/dashboard"
                                  className="whitespace-nowrap border-b-2 pb-2.5 border-[#A86565] font-semibold">
                         Overview
                     </Navbar.Item>
-                    <Navbar.Item href="/">
+                    <Navbar.Item href="/dashboard/settings">
                         Settings
                     </Navbar.Item>
                 </Navbar>
             </header>
             <main className="p-10">
-                {children}
-            </main>
-        </section>
-    )
-}
-
-export const LayoutHome = ({children}: ILayoutProps) => {
-    return (
-        <section className="h-screen flex flex-row-reverse">
-            <aside
-                className="hidden p-5 w-full h-screen md:flex flex-col justify-center items-center gap-1.5 w-1/3 space-x-2.5">
-                <div className="flex items-center space-x-2.5">
-                    <h1 className="text-xl">News</h1>
-                </div>
-                <div className="md:flex md:flex-col p-5 gap-2.5">
-                    <div className="flex flex-col gap-5">
-                        <div
-                            className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] rounded p-5 flex flex-col gap-5">
-                            <div className="flex justify-between">
-                                <h2 className="text">New Module Settings</h2>
-                                <span>2023-01-02</span>
-                            </div>
-                            <p className="text-sm">Create your first tenant and start using lensaas.</p>
-                        </div>
-                        <div
-                            className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] rounded p-5 flex flex-col gap-5">
-                            <div className="flex justify-between">
-                                <h2 className="text">New Module Settings</h2>
-                                <span>2023-01-02</span>
-                            </div>
-                            <p className="text-sm">Create your first tenant and start using lensaas.</p>
-                        </div>
-                        <div
-                            className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] rounded p-5 flex flex-col gap-5">
-                            <div className="flex justify-between">
-                                <h2 className="text">New Module Settings</h2>
-                                <span>2023-01-02</span>
-                            </div>
-                            <p className="text-sm">Create your first tenant and start using lensaas.</p>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-            <main className="p-10 w-full h-screen md:w-2/3 border-r border dark:border-[#1f1f1f] flex justify-center">
                 {children}
             </main>
         </section>

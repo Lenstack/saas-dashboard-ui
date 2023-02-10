@@ -1,15 +1,16 @@
-import {Form, LayoutHome} from "@/components";
+import {Form} from "@/components";
 import {FormEvent} from "react";
 import Avatar from "boring-avatars";
+import Layout from "./layout";
 
-export default function SignIn() {
+export default function SignUp() {
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         console.log(event.target)
     }
 
     return (
-        <LayoutHome>
+        <Layout>
             <section className="w-full p-5 flex justify-center items-center">
                 <Form onSubmit={handleSubmit} method="post"
                       className="flex flex-col w-11/12 md:w-4/12 gap-5">
@@ -28,14 +29,18 @@ export default function SignIn() {
                         <Form.Input type="password" id="password" name="password" placeholder="Password"/>
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5">
-                        <Form.Link to="/sign-in">Forgot your password?</Form.Link>
-                        <Form.Button type="submit">Sign In</Form.Button>
+                        <Form.Label htmlFor="confirm_password">Confirm Password</Form.Label>
+                        <Form.Input type="password" id="confirm_password" name="confirm_password"
+                                    placeholder="Confirm Password"/>
+                    </Form.Content>
+                    <Form.Content className="flex flex-col gap-2.5">
+                        <Form.Button type="submit">Sign Up</Form.Button>
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5 items-center">
-                        <Form.Link to="/sign-up">Dont have an account?</Form.Link>
+                        <Form.Link to="/sign-in">Already have an account?</Form.Link>
                     </Form.Content>
                 </Form>
             </section>
-        </LayoutHome>
+        </Layout>
     )
 }

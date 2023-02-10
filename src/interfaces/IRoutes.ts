@@ -4,3 +4,8 @@ export interface IModuleRoutes {
     image?: string;
     to: string;
 }
+
+export interface IRoutes {
+    name: string;
+    to: string;
+}
