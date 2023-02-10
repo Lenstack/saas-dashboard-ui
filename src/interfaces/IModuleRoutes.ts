@@ -3,5 +3,4 @@ export interface IModuleRoutes {
     description?: string;
     image?: string;
     to: string;
-    color?: string;
 }
