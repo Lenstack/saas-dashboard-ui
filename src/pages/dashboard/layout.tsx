@@ -1,7 +1,7 @@
 import {ILayoutProps} from "@/interfaces";
 import Link from "next/link";
 import Avatar from "boring-avatars";
-import {Navbar} from "@/components";
+import {Breadcrumb, Navbar} from "@/components";
 
 export default function Layout({children}: ILayoutProps) {
     return (
@@ -14,18 +14,8 @@ export default function Layout({children}: ILayoutProps) {
                                     colors={["#000000", "#3A3A3A", "#A86565", "#C0C0C0"]}/>
                         </Link>
                     </div>
-                    <div className="flex flex-grow items-center">
-                        <Link href="/">Tenancy</Link>
-                        <div>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg" className="block shrink-0">
-                                <path d="M9.75 20.25L14.25 3.75" stroke="currentColor" strokeWidth="1.5"
-                                      strokeLinecap="round"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <Link href="/">Overview</Link>
-                        </div>
+                    <div className="flex flex-grow items-center overflow-x-auto">
+                        <Breadcrumb className="flex gap-2.5"/>
                     </div>
                     <div className="flex flex-none items-center">
                         <details className="relative inline-flex">
@@ -52,7 +42,7 @@ export default function Layout({children}: ILayoutProps) {
                                         <Link href="/">Send Feedback</Link>
                                     </li>
                                     <li>
-                                        <Link href="/sign-in">Sign Out</Link>
+                                        <Link href="/authentication/sign-in">Sign Out</Link>
                                     </li>
                                 </ul>
                                 <div

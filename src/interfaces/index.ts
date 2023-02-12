@@ -14,3 +14,4 @@ export type {ICardProps, ICardHeaderProps, ICardBodyProps, ICardFooterProps} fro
 export type {INavbarProps, INavbarContentProps, INavbarItemProps} from "./INavbar"
 export type {ILayoutProps} from "./ILayout"
 export type {IModuleRoutes, IRoutes} from "./IRoutes"
+export type {IBreadcrumbProps, IBreadcrumbItemProps} from "./IBreadcrumb"

@@ -41,6 +41,7 @@ export interface IFormSelectProps {
 export interface IFormButtonProps {
     className?: string
     type: "submit" | "reset" | "button"
+    onClick?: (event: FormEvent<HTMLButtonElement>) => void
     children: ReactNode
 }
 
