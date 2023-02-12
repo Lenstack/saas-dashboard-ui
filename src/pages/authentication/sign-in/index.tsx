@@ -2,11 +2,13 @@ import {Form} from "@/components";
 import {FormEvent} from "react";
 import Avatar from "boring-avatars";
 import Layout from "../layout";
-import {router} from "next/client";
+import {useRouter} from 'next/navigation';
 
 export default function SignIn() {
+    const router = useRouter()
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
+        router.push("/authentication/sign-in")
         console.log(event.target)
     }
 
@@ -31,7 +33,7 @@ export default function SignIn() {
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5">
                         <Form.Link to="/authentication/sign-in">Forgot your password?</Form.Link>
-                        <Form.Button type="submit" onClick={() => console.log("SignIn")}>Sign In</Form.Button>
+                        <Form.Button type="submit">Sign In</Form.Button>
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5 items-center">
                         <Form.Link to="/authentication/sign-up">Dont have an account?</Form.Link>
