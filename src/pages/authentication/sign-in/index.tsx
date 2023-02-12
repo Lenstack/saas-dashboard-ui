@@ -8,7 +8,7 @@ export default function SignIn() {
     const router = useRouter()
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        router.push("/authentication/sign-in")
+        router.push("/dashboard")
         console.log(event.target)
     }
 
