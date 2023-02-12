@@ -35,7 +35,7 @@ export default function SignUp() {
                                     placeholder="Confirm Password"/>
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5">
-                        <Form.Button type="submit" onClick={() => router.push('/authentication/sign-in')}>Sign Up</Form.Button>
+                        <Form.Button type="submit" onClick={() => console.log("SignIn")}>Sign Up</Form.Button>
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5 items-center">
                         <Form.Link to="/authentication/sign-in">Already have an account?</Form.Link>

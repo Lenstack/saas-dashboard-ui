@@ -31,7 +31,7 @@ export default function SignIn() {
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5">
                         <Form.Link to="/authentication/sign-in">Forgot your password?</Form.Link>
-                        <Form.Button type="submit" onClick={() => router.push('/dashboard')}>Sign In</Form.Button>
+                        <Form.Button type="submit" onClick={() => console.log("SignIn")}>Sign In</Form.Button>
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5 items-center">
                         <Form.Link to="/authentication/sign-up">Dont have an account?</Form.Link>
