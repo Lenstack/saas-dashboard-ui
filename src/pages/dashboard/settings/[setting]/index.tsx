@@ -1,12 +1,12 @@
 import Layout from "@/pages/dashboard/layout";
 import {useRouter} from "next/router";
 
-export default function SettingsDetails() {
+export default function Setting() {
     const router = useRouter()
-    const {slug} = router.query
+    const {setting} = router.query
     return (
         <Layout>
-            <p>{slug}</p>
+            <p>{setting}</p>
         </Layout>
     )
 }

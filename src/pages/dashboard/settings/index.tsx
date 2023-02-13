@@ -15,9 +15,6 @@ export default function Settings() {
                         <Navbar.Item href="/dashboard/settings/api-key">Api Keys</Navbar.Item>
                     </Navbar>
                 </section>
-                <section>
-
-                </section>
             </div>
         </Layout>
     )
