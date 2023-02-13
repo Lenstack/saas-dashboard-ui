@@ -37,7 +37,7 @@ export default function Layout({children}: ILayoutProps) {
                     </div>
                 </div>
             </aside>
-            <main className="p-10 w-full h-screen md:w-2/3 border-r border dark:border-[#1f1f1f] flex justify-center">
+            <main className="p-5 w-full h-screen md:w-2/3 border-r border dark:border-[#1f1f1f] flex justify-center">
                 {children}
             </main>
         </section>
