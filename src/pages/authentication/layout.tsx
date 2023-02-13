@@ -2,9 +2,9 @@ import {ILayoutProps} from "@/interfaces";
 
 export default function Layout({children}: ILayoutProps) {
     return (
-        <section className="h-screen flex flex-row-reverse">
+        <section className="h-screen w-full flex flex-row-reverse">
             <aside
-                className="hidden p-5 w-full h-screen md:flex flex-col justify-center items-center gap-1.5 w-1/3 space-x-2.5">
+                className="hidden p-5 md:flex flex-col justify-center items-center w-2/4">
                 <div className="flex items-center space-x-2.5">
                     <h1 className="text-xl">News</h1>
                 </div>
@@ -37,7 +37,7 @@ export default function Layout({children}: ILayoutProps) {
                     </div>
                 </div>
             </aside>
-            <main className="p-5 w-full h-screen md:w-2/3 border-r border dark:border-[#1f1f1f] flex">
+            <main className="p-5 w-full border-r border dark:border-[#1f1f1f] flex">
                 {children}
             </main>
         </section>
