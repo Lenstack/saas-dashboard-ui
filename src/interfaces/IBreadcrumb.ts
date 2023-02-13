@@ -1,6 +1,5 @@
 import {ReactNode} from "react";
 
-
 export interface IBreadcrumbProps {
     className?: string;
     children?: ReactNode;
