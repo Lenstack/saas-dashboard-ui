@@ -13,7 +13,7 @@ export default function Dashboard() {
                         <button className="btn">Create</button>
                     </div>
                 </section>
-                <section className="grid grid-cols-1 lg:grid-cols-3 gap-2.5">
+                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2.5">
                     {
                         MODULE_ROUTES.map((route, index) => (
                             <Link href={route.to} key={index}>
