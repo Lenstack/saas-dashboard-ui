@@ -6,7 +6,6 @@ export default function Institution() {
     const {institution} = router.query
     return (
         <Layout>
-            <h1>Institution</h1>
             <p>{institution}</p>
         </Layout>
     )

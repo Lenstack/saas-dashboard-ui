@@ -1,1 +1,1 @@
-export {MODULE_ROUTES} from "./module.routes";
+export {MODULE_ROUTES, DASHBOARD_ROUTES, HOME_ROUTES, AUTH_ROUTES} from "./module.routes";

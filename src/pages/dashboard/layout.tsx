@@ -2,6 +2,7 @@ import {ILayoutProps} from "@/interfaces";
 import Link from "next/link";
 import Avatar from "boring-avatars";
 import {Breadcrumb, Navbar} from "@/components";
+import {DASHBOARD_ROUTES} from "@/constants";
 
 export default function Layout({children}: ILayoutProps) {
     return (
@@ -60,15 +61,7 @@ export default function Layout({children}: ILayoutProps) {
                         </details>
                     </div>
                 </div>
-                <Navbar className="navbar flex overflow-x-auto">
-                    <Navbar.Item href="/dashboard"
-                                 className="whitespace-nowrap border-b-2 pb-2.5 border-[#A86565] font-semibold">
-                        Overview
-                    </Navbar.Item>
-                    <Navbar.Item href="/dashboard/settings">
-                        Settings
-                    </Navbar.Item>
-                </Navbar>
+                <Navbar className="navbar flex overflow-x-auto" items={DASHBOARD_ROUTES}/>
             </header>
             <main className="p-10">
                 {children}

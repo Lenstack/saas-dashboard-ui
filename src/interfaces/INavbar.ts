@@ -1,8 +1,10 @@
 import {ReactNode} from "react";
+import {IRoutes} from "@/interfaces/IRoutes";
 
 export interface INavbarProps {
     className?: string
-    children: ReactNode
+    items?: IRoutes[]
+    children?: ReactNode
 }
 
 export interface INavbarContentProps {

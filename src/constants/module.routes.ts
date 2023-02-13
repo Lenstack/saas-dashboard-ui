@@ -5,67 +5,67 @@ export const MODULE_ROUTES: IModuleRoutes [] = [
         name: 'The College Of Engineering',
         description: '18 Groups',
         image: '',
-        to: '/dashboard/the-college-of-engineering',
+        to: '/dashboard/institutions/the-college-of-engineering',
     },
     {
         name: 'The College Of Sciences',
         description: '23 Groups',
         image: '',
-        to: '/dashboard/the-college-of-sciences',
+        to: '/dashboard/institutions/the-college-of-sciences',
     },
     {
         name: 'The College Of Business',
         description: '12 Groups',
         image: '',
-        to: '/dashboard/the-college-of-business',
+        to: '/dashboard/institutions/the-college-of-business',
     },
     {
         name: 'The College Of Education',
         description: '8 Groups',
         image: '',
-        to: '/dashboard/the-college-of-education',
+        to: '/dashboard/institutions/the-college-of-education',
     },
     {
         name: 'The College Of Arts And Humanities',
         description: '5 Groups',
         image: '',
-        to: '/dashboard/the-college-of-arts-and-humanities',
+        to: '/dashboard/institutions/the-college-of-arts-and-humanities',
     },
     {
         name: 'The College Of Health And Human Services',
         description: '7 Groups',
         image: '',
-        to: '/dashboard/the-college-of-health-and-human-services',
+        to: '/dashboard/institutions/the-college-of-health-and-human-services',
     },
     {
         name: 'The College Of Nursing',
         description: '3 Groups',
         image: '',
-        to: '/dashboard/the-college-of-nursing',
+        to: '/dashboard/institutions/the-college-of-nursing',
     },
     {
         name: 'The College Of Law',
         description: '2 Groups',
         image: '',
-        to: '/dashboard/the-college-of-law',
+        to: '/dashboard/institutions/the-college-of-law',
     },
     {
         name: 'The College Of Pharmacy',
         description: '1 Group',
         image: '',
-        to: '/dashboard/the-college-of-pharmacy',
+        to: '/dashboard/institutions/the-college-of-pharmacy',
     },
     {
         name: 'The College Of Social Work',
         description: '1 Group',
         image: '',
-        to: '/dashboard/the-college-of-social-work',
+        to: '/dashboard/institutions/the-college-of-social-work',
     },
     {
         name: 'The College Of Veterinary Medicine',
         description: '1 Group',
         image: '',
-        to: '/dashboard/the-college-of-veterinary-medicine',
+        to: '/dashboard/institutions/the-college-of-veterinary-medicine',
     }
 ]
 
@@ -81,6 +81,21 @@ export const HOME_ROUTES: IRoutes [] = [
     {
         name: 'FAQ',
         to: '/faq',
+    },
+]
+
+export const DASHBOARD_ROUTES: IRoutes [] = [
+    {
+        name: 'Overview',
+        to: '/dashboard',
+    },
+    {
+        name: 'Institutions',
+        to: '/dashboard/institutions',
+    },
+    {
+        name: 'Settings',
+        to: '/dashboard/settings',
     },
 ]
 
