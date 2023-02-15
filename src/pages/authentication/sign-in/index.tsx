@@ -1,8 +1,8 @@
 import {Form} from "@/components";
 import {FormEvent} from "react";
 import Avatar from "boring-avatars";
-import Layout from "../layout";
 import {useRouter} from 'next/navigation';
+import {AuthenticationLayout} from "@/layouts";
 
 export default function SignIn() {
     const router = useRouter()
@@ -13,7 +13,7 @@ export default function SignIn() {
     }
 
     return (
-        <Layout>
+        <AuthenticationLayout>
             <section className="w-full p-5 flex justify-center items-center">
                 <Form onSubmit={handleSubmit} method="post"
                       className="flex flex-col w-11/12 md:w-4/12 gap-5">
@@ -40,6 +40,6 @@ export default function SignIn() {
                     </Form.Content>
                 </Form>
             </section>
-        </Layout>
+        </AuthenticationLayout>
     )
 }

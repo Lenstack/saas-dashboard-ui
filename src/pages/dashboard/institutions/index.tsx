@@ -1,12 +1,12 @@
-import Layout from "@/pages/dashboard/layout";
 import {MODULE_ROUTES} from "@/constants";
 import Link from "next/link";
 import {Card} from "@/components";
 import {GetStaticProps} from "next";
+import {DashboardLayout} from "@/layouts";
 
 export default function Institutions({institutions}: any) {
     return (
-        <Layout>
+        <DashboardLayout>
             <div className="flex flex-col gap-2.5">
                 <section className="flex justify-between items-center">
                     <span>Create a new institution</span>
@@ -31,7 +31,7 @@ export default function Institutions({institutions}: any) {
                     }
                 </section>
             </div>
-        </Layout>
+        </DashboardLayout>
     )
 }
 

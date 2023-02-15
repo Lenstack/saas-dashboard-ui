@@ -1,10 +1,10 @@
-import {ILayoutProps} from "@/interfaces";
 import Link from "next/link";
 import Avatar from "boring-avatars";
 import {Breadcrumb, Navbar} from "@/components";
 import {DASHBOARD_ROUTES} from "@/constants";
+import {ILayoutProps} from "@/interfaces";
 
-export default function Layout({children}: ILayoutProps) {
+export const DashboardLayout = ({children}: ILayoutProps) => {
     return (
         <section className="h-screen w-full flex flex-col">
             <header className="p-10 flex flex-col gap-5 border-b dark:border-[#1f1f1f]">

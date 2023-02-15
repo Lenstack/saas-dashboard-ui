@@ -99,6 +99,33 @@ export const DASHBOARD_ROUTES: IRoutes [] = [
     },
 ]
 
+export const SETTINGS_ROUTES: IRoutes [] = [
+    {
+        name: 'General',
+        to: '/dashboard/settings',
+    },
+    {
+        name: 'Security',
+        to: '/dashboard/settings/security',
+    },
+    {
+        name: 'Billing',
+        to: '/dashboard/settings/billing',
+    },
+    {
+        name: 'Teams',
+        to: '/dashboard/settings/teams',
+    },
+    {
+        name: 'Notifications',
+        to: '/dashboard/settings/notifications',
+    },
+    {
+        name: 'API Keys',
+        to: '/dashboard/settings/api-keys',
+    },
+]
+
 export const AUTH_ROUTES: IRoutes [] = [
     {
         name: 'Sign In',

@@ -1,11 +1,11 @@
 import {SettingsLayout} from "@/layouts";
 
-export default function Settings() {
+export default function Security() {
     return (
         <SettingsLayout>
             <section className="flex flex-col gap-2.5">
-                <h1>General</h1>
-                <p>Settings and options for your account.</p>
+                <h1>Security</h1>
+                <p>Manage your account security.</p>
             </section>
         </SettingsLayout>
     )

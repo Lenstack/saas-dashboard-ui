@@ -1,6 +1,6 @@
 import {ILayoutProps} from "@/interfaces";
 
-export default function Layout({children}: ILayoutProps) {
+export const AuthenticationLayout = ({children}: ILayoutProps) => {
     return (
         <section className="h-screen w-full flex flex-row-reverse">
             <aside
