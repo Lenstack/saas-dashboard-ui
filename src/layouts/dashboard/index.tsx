@@ -63,7 +63,7 @@ export const DashboardLayout = ({children}: ILayoutProps) => {
                 </div>
                 <Navbar className="navbar flex overflow-x-auto" items={DASHBOARD_ROUTES}/>
             </header>
-            <main className="p-10">
+            <main className="p-10 h-screen">
                 {children}
             </main>
         </section>
