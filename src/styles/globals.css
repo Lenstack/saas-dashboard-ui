@@ -20,7 +20,7 @@
     }
 
     .card {
-        @apply border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] rounded;
+        @apply p-5 border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] rounded flex flex-col gap-5;
     }
 
     .card__header {

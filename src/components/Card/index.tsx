@@ -10,7 +10,7 @@ export const Card = ({children, ...restProps}: ICardProps) => {
 
 Card.Header = ({children, ...restProps}: ICardHeaderProps) => {
     return (
-        <div className="card__header" {...restProps}>
+        <div {...restProps}>
             {children}
         </div>
     )
@@ -18,7 +18,7 @@ Card.Header = ({children, ...restProps}: ICardHeaderProps) => {
 
 Card.Body = ({children, ...restProps}: ICardBodyProps) => {
     return (
-        <div className="card__body" {...restProps}>
+        <div {...restProps}>
             {children}
         </div>
     )
@@ -26,7 +26,7 @@ Card.Body = ({children, ...restProps}: ICardBodyProps) => {
 
 Card.Footer = ({children, ...restProps}: ICardFooterProps) => {
     return (
-        <div className="card__footer" {...restProps}>
+        <div {...restProps}>
             {children}
         </div>
     )

@@ -61,7 +61,7 @@ Form.Select = ({options, ...restProps}: IFormSelectProps) => {
 
 Form.Button = ({children, ...restProps}: IFormButtonProps) => {
     return (
-        <button className="btn" {...restProps}>
+        <button {...restProps}>
             {children}
         </button>
     )

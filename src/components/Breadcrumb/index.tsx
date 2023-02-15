@@ -1,12 +1,12 @@
 import {IBreadcrumbItemProps, IBreadcrumbProps} from "@/interfaces";
 import Link from "next/link";
-import {useRouterPath} from "@/hooks";
 import {toPascalCase} from "@/utils";
 import {Fragment} from "react";
+import {useRouter} from "next/router";
 
 export const Breadcrumb = ({...restProps}: IBreadcrumbProps) => {
-    const route = useRouterPath()
-    const paths = route.split('/').filter(Boolean)
+    const router = useRouter()
+    const paths = router.asPath.split('/').filter(Boolean)
     return (
         <div {...restProps}>
             {

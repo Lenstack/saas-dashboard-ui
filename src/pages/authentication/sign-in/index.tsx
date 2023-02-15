@@ -33,7 +33,7 @@ export default function SignIn() {
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5">
                         <Form.Link to="/authentication/forgot-password">Forgot your password?</Form.Link>
-                        <Form.Button type="submit">Sign In</Form.Button>
+                        <Form.Button type="submit" className="btn">Sign In</Form.Button>
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5 items-center">
                         <Form.Link to="/authentication/sign-up">Dont have an account?</Form.Link>

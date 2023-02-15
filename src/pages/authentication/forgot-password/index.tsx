@@ -27,7 +27,7 @@ export default function ForgotPassword() {
                                     placeholder="Enter your email"/>
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5">
-                        <Form.Button type="submit">Reset Password</Form.Button>
+                        <Form.Button type="submit" className="btn">Reset Password</Form.Button>
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5 items-center">
                         <Form.Link to="/authentication/sign-in">Go back to Sign In?</Form.Link>

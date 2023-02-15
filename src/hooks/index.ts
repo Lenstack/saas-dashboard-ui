@@ -1,1 +1,0 @@
-export {useRouterPath} from "./useRouterPath"
