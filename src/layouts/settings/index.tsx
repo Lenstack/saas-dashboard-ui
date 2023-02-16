@@ -6,9 +6,9 @@ import {DashboardLayout} from "@/layouts";
 export const SettingsLayout = ({children}: ILayoutProps) => {
     return (
         <DashboardLayout>
-            <div className="flex flex-col lg:flex-row gap-10">
-                <Navbar items={SETTINGS_ROUTES} className="flex flex-col gap-4"/>
-                <section>
+            <div className="flex flex-col gap-5">
+                <Navbar items={SETTINGS_ROUTES} className="flex gap-2.5 overflow-x-scroll"/>
+                <section className="py-5 w-full">
                     {children}
                 </section>
             </div>
