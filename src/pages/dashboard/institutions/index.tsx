@@ -13,7 +13,7 @@ export default function Institutions({institutions}: any) {
             <div className="flex flex-col gap-2.5">
                 <section className="flex justify-between items-center">
                     <span>Create a new institution</span>
-                    <ModalContext.Provider value={{showModal: showModal, setShowModal}}>
+                    <ModalContext.Provider value={{showModal, setShowModal}}>
                         <Modal title="New Institution" header="New Institution" subtitle="Create a new institution"
                                content={<ModalForm/>}/>
                     </ModalContext.Provider>
@@ -58,7 +58,7 @@ const ModalForm = () => {
                 <Form.Input type="text" id="description" name="description" placeholder="Description"/>
             </Form.Content>
             <Form.Content className="flex flex-col gap-2.5 mt-2.5">
-                <Form.Button type="submit" className="btn bg-[#111111] text-white">Create</Form.Button>
+                <Form.Button type="submit" className="btn">Create Institution</Form.Button>
             </Form.Content>
         </Form>
     )
