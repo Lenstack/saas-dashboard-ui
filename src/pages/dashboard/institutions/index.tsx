@@ -1,18 +1,22 @@
 import {MODULE_ROUTES} from "@/constants";
 import Link from "next/link";
-import {Card, Modal} from "@/components";
+import {Card, Form, Modal} from "@/components";
 import {GetServerSideProps, GetStaticProps} from "next";
 import {DashboardLayout} from "@/layouts";
-import {useState} from "react";
+import {useContext, useState} from "react";
+import {ModalContext} from "@/contexts";
 
 export default function Institutions({institutions}: any) {
+    const [showModal, setShowModal] = useState(false)
     return (
         <DashboardLayout>
             <div className="flex flex-col gap-2.5">
                 <section className="flex justify-between items-center">
                     <span>Create a new institution</span>
-                    <Modal title="New Institution" header="New Institution" subtitle="Create a new institution"
-                           content={"Form Component"}/>
+                    <ModalContext.Provider value={{showModal: showModal, setShowModal}}>
+                        <Modal title="New Institution" header="New Institution" subtitle="Create a new institution"
+                               content={<ModalForm/>}/>
+                    </ModalContext.Provider>
                 </section>
                 <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2.5">
                     {
@@ -32,6 +36,31 @@ export default function Institutions({institutions}: any) {
                 </section>
             </div>
         </DashboardLayout>
+    )
+}
+
+const ModalForm = () => {
+    const {showModal, setShowModal} = useContext(ModalContext)
+    const handleSubmit = (e: any) => {
+        e.preventDefault()
+        setShowModal(!showModal)
+        console.log(e.target.name)
+    }
+
+    return (
+        <Form onSubmit={handleSubmit} method="post" className="h-full flex flex-col gap-5">
+            <Form.Content className="flex flex-col gap-2.5">
+                <Form.Label htmlFor="name">Name</Form.Label>
+                <Form.Input type="text" id="name" name="name" placeholder="Name"/>
+            </Form.Content>
+            <Form.Content className="flex flex-col gap-2.5">
+                <Form.Label htmlFor="description">Description</Form.Label>
+                <Form.Input type="text" id="description" name="description" placeholder="Description"/>
+            </Form.Content>
+            <Form.Content className="flex flex-col gap-2.5 mt-2.5">
+                <Form.Button type="submit" className="btn bg-[#111111] text-white">Create</Form.Button>
+            </Form.Content>
+        </Form>
     )
 }
 

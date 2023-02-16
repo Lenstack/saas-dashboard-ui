@@ -1,9 +1,10 @@
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {IModal} from "@/interfaces";
 import {XMarkIcon} from "@heroicons/react/24/outline";
+import {ModalContext} from "@/contexts";
 
 export const Modal = ({title, subtitle, header, content}: IModal) => {
-    const [showModal, setShowModal] = useState(false)
+    const {showModal, setShowModal} = useContext(ModalContext)
 
     const toggleModal = () => {
         setShowModal(!showModal)
