@@ -1,8 +1,9 @@
 import {MODULE_ROUTES} from "@/constants";
 import Link from "next/link";
 import {Card, Modal} from "@/components";
-import {GetStaticProps} from "next";
+import {GetServerSideProps, GetStaticProps} from "next";
 import {DashboardLayout} from "@/layouts";
+import {useState} from "react";
 
 export default function Institutions({institutions}: any) {
     return (
@@ -10,7 +11,7 @@ export default function Institutions({institutions}: any) {
             <div className="flex flex-col gap-2.5">
                 <section className="flex justify-between items-center">
                     <span>Create a new institution</span>
-                    <Modal title="Create" header="New Institution" subtitle="Create a new institution"
+                    <Modal title="New Institution" header="New Institution" subtitle="Create a new institution"
                            content={"Form Component"}/>
                 </section>
                 <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2.5">
