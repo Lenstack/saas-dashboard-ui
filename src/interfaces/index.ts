@@ -15,3 +15,4 @@ export type {INavbarProps, INavbarContentProps, INavbarItemProps} from "./INavba
 export type {ILayoutProps} from "./ILayout"
 export type {IModuleRoutes, IRoutes} from "./IRoutes"
 export type {IBreadcrumbProps, IBreadcrumbItemProps} from "./IBreadcrumb"
+export type {IModal} from "./IModal"
