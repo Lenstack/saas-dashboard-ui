@@ -44,7 +44,7 @@
     }
 
     .modal__overlay {
-        @apply fixed inset-0 bg-black bg-opacity-50 z-50
+        @apply fixed inset-0 bg-black bg-opacity-60 z-50
     }
 
     .modal__header {
@@ -60,7 +60,7 @@
     }
 
     .modal__content {
-        @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#fafafa] dark:bg-[#161616]
+        @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#fafafa] dark:bg-[#161616] border dark:border-[#1f1f1f]
         rounded p-5 w-4/5 lg:w-3/5 h-3/5 flex flex-col gap-5
     }
 }
