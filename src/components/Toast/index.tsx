@@ -47,9 +47,9 @@ export const Toast = ({type, location, duration = 10000, message}: IToast) => {
         showToast ? (
             <div
                 className={`absolute z-10 ${locationStyle} flex items-center w-full p-4 space-x-4 max-w-xs 
-                ${typeStyle} border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] rounded`}>
+                 border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] rounded`}>
                 <span>
-                    <CheckIcon className="w-5 h-5"/>
+                    <CheckIcon className={`w-5 h-5 ${typeStyle}`}/>
                 </span>
                 <span>{toPascalCase(message)}</span>
                 <button className="ml-auto" onClick={handleToast}>

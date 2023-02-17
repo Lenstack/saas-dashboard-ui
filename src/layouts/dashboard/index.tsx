@@ -10,7 +10,7 @@ export const DashboardLayout = ({children}: ILayoutProps) => {
     const [showToast, setShowToast] = useState(false)
     return (
         <ToastContext.Provider value={{showToast, setShowToast}}>
-            <Toast location="bottom-center" type="success"
+            <Toast location="top-right" type="success"
                    message="the action has been finished successfully"/>
             <section className="h-screen w-full flex flex-col">
                 <header className="p-10 flex flex-col gap-5 border-b dark:border-[#1f1f1f]">
