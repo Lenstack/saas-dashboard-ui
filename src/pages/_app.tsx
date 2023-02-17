@@ -12,6 +12,7 @@ export default function App({Component, pageProps}: AppProps) {
                 <meta name="description" content="Dashboard"/>
                 <link rel="icon" href="/favicon.ico"/>
                 <link rel="manifest" href="/manifest.json"/>
+                <link rel="apple-touch-icon" href="/images/icons/icon-192x192.png"/>
             </Head>
             <Component {...pageProps} />
         </>
