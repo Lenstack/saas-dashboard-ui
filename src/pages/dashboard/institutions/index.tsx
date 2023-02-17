@@ -1,14 +1,16 @@
 import {MODULE_ROUTES} from "@/constants";
 import Link from "next/link";
-import {Card, Form, Modal} from "@/components";
-import {GetServerSideProps, GetStaticProps} from "next";
+import {Card, Form, Modal, Toast} from "@/components";
+import {GetStaticProps} from "next";
 import {DashboardLayout} from "@/layouts";
 import {useContext, useState} from "react";
-import {ModalContext} from "@/contexts";
+import {ModalContext, ToastContext} from "@/contexts";
 
 export default function Institutions({institutions}: any) {
     const [showModal, setShowModal] = useState(false)
+
     return (
+
         <DashboardLayout>
             <div className="flex flex-col gap-2.5">
                 <section className="flex justify-between items-center">
@@ -41,9 +43,11 @@ export default function Institutions({institutions}: any) {
 
 const ModalForm = () => {
     const {showModal, setShowModal} = useContext(ModalContext)
+    const {showToast, setShowToast} = useContext(ToastContext)
     const handleSubmit = (e: any) => {
         e.preventDefault()
         setShowModal(!showModal)
+        setShowToast(!showToast)
         console.log(e.target.name)
     }
 
