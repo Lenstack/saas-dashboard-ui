@@ -7,7 +7,7 @@ export const SettingsLayout = ({children}: ILayoutProps) => {
     return (
         <DashboardLayout>
             <div className="flex flex-col gap-5">
-                <Navbar items={SETTINGS_ROUTES} className="navbar overflow-x-scroll"/>
+                <Navbar items={SETTINGS_ROUTES} className="navbar overflow-auto"/>
                 <section className="py-5 w-full">
                     {children}
                 </section>
