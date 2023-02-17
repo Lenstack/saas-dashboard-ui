@@ -12,7 +12,7 @@ export default function Institution() {
         <DashboardLayout>
             <div>
                 <section className="flex justify-between items-center">
-                    <span>Create a new group for <span className="text-red-300">{institution}</span> institution</span>
+                    <span>Create a new group for <span className="text-orange-200">{institution}</span> institution</span>
                     <ModalContext.Provider value={{showModal, setShowModal}}>
                         <Modal title={"New Group"} header={"New Group"} subtitle={"Create a new group"}
                                content={<ModalForm/>}/>

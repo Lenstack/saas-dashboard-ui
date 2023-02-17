@@ -36,7 +36,7 @@
     }
 
     .btn {
-        @apply bg-[#161616] text-white dark:text-black dark:bg-red-300 border dark:border-[#1f1f1f] rounded p-2.5 w-full
+        @apply bg-[#161616] text-white dark:text-black dark:bg-orange-200 border dark:border-[#1f1f1f] rounded p-2.5 w-full
     }
 
     .modal__close {
