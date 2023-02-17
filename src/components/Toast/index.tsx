@@ -51,7 +51,7 @@ export const Toast = ({type, location, duration = 10000, message}: IToast) => {
                 <span>
                     <CheckIcon className={`w-5 h-5 ${typeStyle}`}/>
                 </span>
-                <span>{toPascalCase(message)}</span>
+                <span>{message}</span>
                 <button className="ml-auto" onClick={handleToast}>
                     <XMarkIcon className="w-5 h-5"/>
                 </button>

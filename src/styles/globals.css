@@ -36,7 +36,7 @@
     }
 
     .btn {
-        @apply bg-[#161616] text-white dark:bg-[#A86565] border dark:border-[#1f1f1f] rounded p-3 w-full
+        @apply bg-[#161616] text-white dark:text-black dark:bg-red-300 border dark:border-[#1f1f1f] rounded p-2.5 w-full
     }
 
     .modal__close {
@@ -60,7 +60,8 @@
     }
 
     .modal__content {
-        @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#fafafa] dark:bg-[#161616] border dark:border-[#1f1f1f]
+        @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+        bg-[#fafafa] dark:bg-[#161616] border dark:border-[#1f1f1f]
         rounded p-5 w-4/5 lg:w-2/5 flex flex-col gap-5
     }
 }

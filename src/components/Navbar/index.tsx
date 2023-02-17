@@ -9,7 +9,7 @@ export const Navbar = ({items, children, ...restProps}: INavbarProps) => {
             {
                 items?.map((item, index) => (
                     <Navbar.Item key={index} href={item.to}
-                                 className={`${item.to === asPath ? "" : ""}`}>{item.name}</Navbar.Item>
+                                 className={`${item.to === asPath ? "text-red-400 dark:text-red-300" : ""}`}>{item.name}</Navbar.Item>
                 ))
             }
             {children}
