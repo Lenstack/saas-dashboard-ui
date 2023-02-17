@@ -12,8 +12,10 @@ const TOAST_TYPES = {
 }
 
 const TOAST_LOCATIONS = {
+    "top-center": "top-5 left-1/2 transform -translate-x-1/2",
     "top-left": "top-5 left-5",
     "top-right": "top-5 right-5",
+    "bottom-center": "bottom-5 left-1/2 transform -translate-x-1/2",
     "bottom-left": "bottom-5 left-5",
     "bottom-right": "bottom-5 right-5"
 }
