@@ -8,7 +8,7 @@ export default function Home() {
     return (
         <div className="p-10 w-full h-screen flex flex-col gap-5">
             <header className="flex justify-between">
-                <Navbar items={HOME_ROUTES} className="flex flex-row-reverse items-center gap-2.5">
+                <Navbar items={HOME_ROUTES} className="hidden lg:flex flex-row-reverse items-center gap-2.5">
                     <Navbar.Content className="flex items-center space-x-5">
                         <Navbar.Item href="/">
                             <Avatar size={32} name="Avatar" variant="marble"
