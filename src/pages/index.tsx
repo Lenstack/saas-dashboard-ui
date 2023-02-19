@@ -222,6 +222,9 @@ export default function Home() {
                     </div>
                 </section>
             </main>
+            <footer className="flex justify-center py-16">
+                <span>© {new Date().getFullYear()} Lenstack Company. All rights reserved.</span>
+            </footer>
         </div>
     )
 }

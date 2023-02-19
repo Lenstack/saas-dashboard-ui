@@ -82,6 +82,6 @@
     }
 
     .section__faq {
-        @apply flex flex-col gap-10
+        @apply flex flex-col gap-10 justify-center items-center
     }
 }
