@@ -19,7 +19,7 @@ export default function Home() {
                 <Navbar items={AUTH_ROUTES} className="flex items-center gap-2.5"/>
             </header>
             <main className="space-y-20 text-center">
-                <section className="section__hero">
+                <section className="section__hero" id="hero">
                     <article className="flex flex-col gap-5 text-center">
                         <h1 className="text-6xl font-bold">
                             Automate your workflow with <span
@@ -43,9 +43,9 @@ export default function Home() {
                         </button>
                     </div>
                 </section>
-                <section className="section__features">
+                <section className="section__features" id="features">
                     <article className="flex flex-col gap-2.5">
-                        <h3 className="text-3xl">New Features</h3>
+                        <h3 className="text-3xl font-bold">New Features</h3>
                         <p className="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
                             aspernatur.</p>
                     </article>
@@ -82,10 +82,11 @@ export default function Home() {
                         </article>
                     </div>
                 </section>
-                <section className="section__testimonials">
+                <section className="section__testimonials" id="testimonials">
                     <article>
-                        <h3>Testimonials</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
+                        <h3 className="text-3xl font-bold">Testimonials</h3>
+                        <p className="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
+                            aspernatur.</p>
                     </article>
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
                         <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
@@ -140,12 +141,26 @@ export default function Home() {
                                     dolorem ea eveniet expedita ipsam molestiae odit quod, veritatis.</p>
                             </div>
                         </article>
+                        <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
+                            <div>
+                                <div>
+                                    <Image src="/images/1.jpg" alt="Picture of the author" width={100} height={100}/>
+                                </div>
+                                <span>John Doe</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
+                            </div>
+                            <div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut distinctio dolor
+                                    dolorem ea eveniet expedita ipsam molestiae odit quod, veritatis.</p>
+                            </div>
+                        </article>
                     </div>
                 </section>
-                <section className="section__pricing">
+                <section className="section__pricing" id="pricing">
                     <article>
-                        <h3>Pricing</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
+                        <h3 className="text-3xl font-bold">Pricing</h3>
+                        <p className="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
+                            aspernatur.</p>
                     </article>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
                         <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
@@ -204,10 +219,11 @@ export default function Home() {
                         </article>
                     </div>
                 </section>
-                <section className="section__faq">
+                <section className="section__faq" id="faq">
                     <article>
-                        <h3>FAQ</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
+                        <h3 className="text-3xl font-bold">FAQ</h3>
+                        <p className="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
+                            aspernatur.</p>
                     </article>
                     <div>
                         <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">

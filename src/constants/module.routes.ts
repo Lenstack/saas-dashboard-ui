@@ -17,17 +17,21 @@ export const MODULE_ROUTES: IModuleRoutes [] = [
 
 export const HOME_ROUTES: IRoutes [] = [
     {
-        name: 'Features',
-        to: '/features',
+        name: 'FAQ',
+        to: '#faq',
     },
     {
         name: 'Pricing',
-        to: '/pricing',
+        to: '#pricing',
     },
     {
-        name: 'FAQ',
-        to: '/faq',
+        name: 'Testimonials',
+        to: '#testimonials',
     },
+    {
+        name: 'Features',
+        to: '#features',
+    }
 ]
 
 export const DASHBOARD_ROUTES: IRoutes [] = [
