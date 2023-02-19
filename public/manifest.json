@@ -3,7 +3,7 @@
   "background_color": "#FFFFFF",
   "display": "standalone",
   "scope": "/",
-  "start_url": "/authentication/sign-in",
+  "start_url": "/",
   "name": "Lensaas",
   "description": "Lensaas is a web app that allows you to create and share your own lenses for the Snapchat app.",
   "short_name": "Lensaas",

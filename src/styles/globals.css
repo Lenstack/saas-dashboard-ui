@@ -36,7 +36,7 @@
     }
 
     .btn {
-        @apply bg-[#161616] text-white dark:text-black dark:bg-orange-200 border dark:border-[#1f1f1f] rounded p-2.5 w-full
+        @apply bg-[#161616] text-white dark:text-black dark:bg-[#7EEAEC] border dark:border-[#1f1f1f] rounded p-2.5 w-full
     }
 
     .modal__close {
@@ -66,22 +66,22 @@
     }
 
     .section__hero {
-        @apply flex flex-col gap-10 justify-center items-center h-[90vh]
+        @apply w-full grid grid-cols-1 lg:grid-cols-2 gap-5 py-14
     }
 
     .section__features {
-        @apply flex flex-col gap-10
+        @apply flex flex-col
     }
 
     .section__testimonials {
-        @apply flex flex-col gap-10
+        @apply flex flex-col
     }
 
     .section__pricing {
-        @apply flex flex-col gap-10
+        @apply flex flex-col
     }
 
     .section__faq {
-        @apply flex flex-col gap-10 justify-center items-center
+        @apply flex flex-col
     }
 }

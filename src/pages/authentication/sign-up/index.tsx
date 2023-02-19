@@ -19,8 +19,8 @@ export default function SignUp() {
                       className="flex flex-col w-11/12 md:w-4/12 gap-5">
                     <Form.Content className="flex flex-col gap-2.5 items-center py-5">
                         <Form.Link to="/">
-                            <Avatar size={50} name="Avatar" variant="sunset"
-                                    colors={["#000000", "#3A3A3A", "#A86565", "#C0C0C0"]}/>
+                            <Avatar size={45} name="Avatar" variant="sunset"
+                                    colors={["#000000", "#31323E", "#7EEAEC", "#C0C0C0"]}/>
                         </Form.Link>
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5">
