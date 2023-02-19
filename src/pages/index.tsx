@@ -18,18 +18,18 @@ export default function Home() {
                 </Navbar>
                 <Navbar items={AUTH_ROUTES} className="flex items-center gap-2.5"/>
             </header>
-            <main>
-                <section className="h-1/4 lg:h-1/3 flex flex-col justify-center items-center gap-16">
-                    <article className="flex flex-col gap-8 text-center">
+            <main className="space-y-20 text-center">
+                <section className="section__hero">
+                    <article className="flex flex-col gap-5 text-center">
                         <h1 className="text-6xl font-bold">
                             Automate your workflow with <span
                             className="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-rose-300">Lensaas</span>
                         </h1>
-                        <p>
+                        <p className="text-xl">
                             Upload and manage your students notes and assignments in one place.
                         </p>
                     </article>
-                    <div className="flex space-x-5 gap-2.5">
+                    <div className="flex space-x-5 justify-center mt-5">
                         <button
                             className="border dark:border-[#1f1f1f] bg-[#161616] text-white dark:bg-[#161616] px-8 py-5">Get
                             Started
@@ -43,50 +43,52 @@ export default function Home() {
                         </button>
                     </div>
                 </section>
-                <section className="flex flex-col justify-center items-center">
-                    <div
-                        className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] w-4/5 p-12 rounded-2xl"></div>
-                </section>
-                <section>
-                    <article>
-                        <h3>New Features</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
+                <section className="section__features">
+                    <article className="flex flex-col gap-2.5">
+                        <h3 className="text-3xl">New Features</h3>
+                        <p className="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
+                            aspernatur.</p>
                     </article>
-                    <div>
-                        <article>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                        <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
                             <span>image icon</span>
                             <h4>Lorem ipsum dolor sit amet.</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
                         </article>
-                        <article>
+                        <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
                             <span>image icon</span>
                             <h4>Lorem ipsum dolor sit amet.</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
                         </article>
-                        <article>
+                        <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
                             <span>image icon</span>
                             <h4>Lorem ipsum dolor sit amet.</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
                         </article>
-                        <article>
+                        <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
                             <span>image icon</span>
                             <h4>Lorem ipsum dolor sit amet.</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
                         </article>
-                        <article>
+                        <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
+                            <span>image icon</span>
+                            <h4>Lorem ipsum dolor sit amet.</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
+                        </article>
+                        <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
                             <span>image icon</span>
                             <h4>Lorem ipsum dolor sit amet.</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
                         </article>
                     </div>
                 </section>
-                <section>
+                <section className="section__testimonials">
                     <article>
                         <h3>Testimonials</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
                     </article>
-                    <div>
-                        <article>
+                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
+                        <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
                             <div>
                                 <div>
                                     <Image src="/images/1.jpg" alt="Picture of the author" width={100} height={100}/>
@@ -99,7 +101,7 @@ export default function Home() {
                                     dolorem ea eveniet expedita ipsam molestiae odit quod, veritatis.</p>
                             </div>
                         </article>
-                        <article>
+                        <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
                             <div>
                                 <div>
                                     <Image src="/images/1.jpg" alt="Picture of the author" width={100} height={100}/>
@@ -112,7 +114,20 @@ export default function Home() {
                                     dolorem ea eveniet expedita ipsam molestiae odit quod, veritatis.</p>
                             </div>
                         </article>
-                        <article>
+                        <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
+                            <div>
+                                <div>
+                                    <Image src="/images/1.jpg" alt="Picture of the author" width={100} height={100}/>
+                                </div>
+                                <span>John Doe</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
+                            </div>
+                            <div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut distinctio dolor
+                                    dolorem ea eveniet expedita ipsam molestiae odit quod, veritatis.</p>
+                            </div>
+                        </article>
+                        <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
                             <div>
                                 <div>
                                     <Image src="/images/1.jpg" alt="Picture of the author" width={100} height={100}/>
@@ -127,13 +142,13 @@ export default function Home() {
                         </article>
                     </div>
                 </section>
-                <section>
+                <section className="section__pricing">
                     <article>
                         <h3>Pricing</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
                     </article>
-                    <div>
-                        <article>
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                        <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
                             <div>
                                 <h4>Basic</h4>
                                 <span>$20</span>
@@ -151,7 +166,7 @@ export default function Home() {
                                 <button>Starting using</button>
                             </div>
                         </article>
-                        <article>
+                        <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
                             <div>
                                 <h4>Basic</h4>
                                 <span>$20</span>
@@ -169,7 +184,7 @@ export default function Home() {
                                 <button>Starting using</button>
                             </div>
                         </article>
-                        <article>
+                        <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
                             <div>
                                 <h4>Basic</h4>
                                 <span>$20</span>
@@ -189,40 +204,13 @@ export default function Home() {
                         </article>
                     </div>
                 </section>
-                <section>
+                <section className="section__faq">
                     <article>
                         <h3>FAQ</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
                     </article>
                     <div>
-                        <article>
-                            <div>
-                                <h4>Lorem ipsum dolor sit amet.</h4>
-                                <span>+</span>
-                            </div>
-                            <div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
-                            </div>
-                        </article>
-                        <article>
-                            <div>
-                                <h4>Lorem ipsum dolor sit amet.</h4>
-                                <span>+</span>
-                            </div>
-                            <div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
-                            </div>
-                        </article>
-                        <article>
-                            <div>
-                                <h4>Lorem ipsum dolor sit amet.</h4>
-                                <span>+</span>
-                            </div>
-                            <div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
-                            </div>
-                        </article>
-                        <article>
+                        <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
                             <div>
                                 <h4>Lorem ipsum dolor sit amet.</h4>
                                 <span>+</span>

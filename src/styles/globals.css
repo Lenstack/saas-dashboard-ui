@@ -64,4 +64,24 @@
         bg-[#fafafa] dark:bg-[#161616] border dark:border-[#1f1f1f]
         rounded p-5 w-4/5 lg:w-2/5 flex flex-col gap-5
     }
+
+    .section__hero {
+        @apply flex flex-col gap-10 justify-center items-center h-[90vh]
+    }
+
+    .section__features {
+        @apply flex flex-col gap-10
+    }
+
+    .section__testimonials {
+        @apply flex flex-col gap-10
+    }
+
+    .section__pricing {
+        @apply flex flex-col gap-10
+    }
+
+    .section__faq {
+        @apply flex flex-col gap-10
+    }
 }
