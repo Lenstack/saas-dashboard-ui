@@ -25,6 +25,21 @@ export const HOME_FEATURES = [
         icon: <AcademicCapIcon className="h-8 w-8"/>,
         title: 'Feature 5',
         description: 'Feature 5 description',
+    },
+    {
+        icon: <AcademicCapIcon className="h-8 w-8"/>,
+        title: 'Feature 6',
+        description: 'Feature 6 description',
+    },
+    {
+        icon: <AcademicCapIcon className="h-8 w-8"/>,
+        title: 'Feature 7',
+        description: 'Feature 7 description',
+    },
+    {
+        icon: <AcademicCapIcon className="h-8 w-8"/>,
+        title: 'Feature 8',
+        description: 'Feature 8 description',
     }
 ]
 
@@ -75,6 +90,22 @@ export const HOME_PLANS = [
             },
         ]
     },
+    {
+        name: 'Plan 3',
+        description: 'description',
+        price: 30,
+        features: [
+            {
+                description: 'description',
+            },
+            {
+                description: 'description',
+            },
+            {
+                description: 'description',
+            }
+        ]
+    }
 ]
 
 export const HOME_FAQS = [
@@ -85,5 +116,13 @@ export const HOME_FAQS = [
     {
         question: 'Question 2',
         answer: 'Answer 2',
+    },
+    {
+        question: 'Question 3',
+        answer: 'Answer 3',
+    },
+    {
+        question: 'Question 4',
+        answer: 'Answer 4',
     }
 ]

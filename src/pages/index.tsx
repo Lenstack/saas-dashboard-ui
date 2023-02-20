@@ -142,9 +142,9 @@ export default function Home() {
                     </section>
                     <section id="faq">
                         <article className="space-y-5 text-center pb-16">
-                            <h3 className="text-3xl font-bold">FAQ</h3>
-                            <p className="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-                                aspernatur.</p>
+                            <h3 className="text-3xl font-bold">
+                                Find your answer in our FAQ
+                            </h3>
                         </article>
                         <div className="space-y-5">
                             {
