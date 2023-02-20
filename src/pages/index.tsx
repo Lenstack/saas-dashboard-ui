@@ -29,7 +29,7 @@ export default function Home() {
                     </div>
                 </header>
                 <main className="space-y-36">
-                    <section className="flex items-center gap-20 py-32" id="hero">
+                    <section className="flex items-center gap-5 pt-32" id="hero">
                         <div className="space-y-10 lg:w-3/6">
                             <article className="space-y-10">
                                 <h1 className="text-6xl font-bold">
