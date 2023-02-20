@@ -21,8 +21,8 @@ export const HOME_ROUTES: IRoutes [] = [
         to: '#faq',
     },
     {
-        name: 'Pricing',
-        to: '#pricing',
+        name: 'Plans',
+        to: '#plans',
     },
     {
         name: 'Testimonials',
