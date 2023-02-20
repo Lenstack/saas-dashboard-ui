@@ -1,3 +1,3 @@
-export {DashboardLayout} from "./dashboard"
-export {AuthenticationLayout} from "./authentication"
-export {SettingsLayout} from "./settings"
+export {DashboardLayout} from "./Dashboard"
+export {AuthenticationLayout} from "./Authentication"
+export {SettingsLayout} from "./Setting"
