@@ -1,10 +1,11 @@
 import {Navbar} from "@/components";
 import {AUTH_ROUTES, HOME_ROUTES} from "@/constants";
 import Image from "next/image";
-import {ArrowLeftIcon, Bars2Icon} from "@heroicons/react/24/outline";
+import {ArrowLeftIcon, Bars2Icon, ChevronDownIcon} from "@heroicons/react/24/outline";
 import Link from "next/link";
 import HeroImgRight from "@/assets/images/heroright2.jpg";
 import Avatar from "boring-avatars";
+import {HOME_FAQS, HOME_FEATURES, HOME_PLANS, HOME_TESTIMONIALS} from "@/fixtures";
 
 export default function Home() {
     return (
@@ -58,216 +59,114 @@ export default function Home() {
                                    className="rounded-2xl"/>
                         </div>
                     </section>
-                    <section className="section__features" id="features">
-                        <article className="flex flex-col gap-2.5">
-                            <h3 className="text-3xl font-bold">Features</h3>
-                            <p className="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-                                aspernatur.</p>
+                    <section id="features">
+                        <article className="space-y-5 text-center pb-16">
+                            <h3 className="text-3xl font-bold">Services is really easy to use</h3>
+
                         </article>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-                            <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
-                                <span>image icon</span>
-                                <h4>Lorem ipsum dolor sit amet.</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
-                            </article>
-                            <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
-                                <span>image icon</span>
-                                <h4>Lorem ipsum dolor sit amet.</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
-                            </article>
-                            <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
-                                <span>image icon</span>
-                                <h4>Lorem ipsum dolor sit amet.</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
-                            </article>
-                            <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
-                                <span>image icon</span>
-                                <h4>Lorem ipsum dolor sit amet.</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
-                            </article>
-                            <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
-                                <span>image icon</span>
-                                <h4>Lorem ipsum dolor sit amet.</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
-                            </article>
-                            <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
-                                <span>image icon</span>
-                                <h4>Lorem ipsum dolor sit amet.</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur.</p>
-                            </article>
+                            {
+                                HOME_FEATURES.map((feature, index) => (
+                                    <article key={index}
+                                             className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616]
+                                dark:hover:bg-cyan-300 dark:hover:text-black rounded cursor-pointer p-8 space-y-2.5">
+                                        <div className="flex space-x-2.5">
+                                            <span>{feature.icon}</span>
+                                            <h4 className="text-lg">{feature.title}</h4>
+                                        </div>
+                                        <p className="">{feature.description}</p>
+                                    </article>
+                                ))
+                            }
+
                         </div>
                     </section>
-                    <section className="section__testimonials" id="testimonials">
-                        <article>
-                            <h3 className="text-3xl font-bold">Testimonials</h3>
-                            <p className="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-                                aspernatur.</p>
+                    <section id="testimonials">
+                        <article className="space-y-5 text-center pb-16">
+                            <h3 className="text-3xl font-bold">What our client say about us</h3>
                         </article>
-                        <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
-                            <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
-                                <div>
-                                    <div>
-                                        <Image src="/images/1.jpg" alt="Picture of the author" width={100}
-                                               height={100}/>
-                                    </div>
-                                    <span>John Doe</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-                                        aspernatur.</p>
-                                </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut distinctio dolor
-                                        dolorem ea eveniet expedita ipsam molestiae odit quod, veritatis.</p>
-                                </div>
-                            </article>
-                            <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
-                                <div>
-                                    <div>
-                                        <Image src="/images/1.jpg" alt="Picture of the author" width={100}
-                                               height={100}/>
-                                    </div>
-                                    <span>John Doe</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-                                        aspernatur.</p>
-                                </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut distinctio dolor
-                                        dolorem ea eveniet expedita ipsam molestiae odit quod, veritatis.</p>
-                                </div>
-                            </article>
-                            <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
-                                <div>
-                                    <div>
-                                        <Image src="/images/1.jpg" alt="Picture of the author" width={100}
-                                               height={100}/>
-                                    </div>
-                                    <span>John Doe</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-                                        aspernatur.</p>
-                                </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut distinctio dolor
-                                        dolorem ea eveniet expedita ipsam molestiae odit quod, veritatis.</p>
-                                </div>
-                            </article>
-                            <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
-                                <div>
-                                    <div>
-                                        <Image src="/images/1.jpg" alt="Picture of the author" width={100}
-                                               height={100}/>
-                                    </div>
-                                    <span>John Doe</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-                                        aspernatur.</p>
-                                </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut distinctio dolor
-                                        dolorem ea eveniet expedita ipsam molestiae odit quod, veritatis.</p>
-                                </div>
-                            </article>
-                            <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
-                                <div>
-                                    <div>
-                                        <Image src="/images/1.jpg" alt="Picture of the author" width={100}
-                                               height={100}/>
-                                    </div>
-                                    <span>John Doe</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-                                        aspernatur.</p>
-                                </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut distinctio dolor
-                                        dolorem ea eveniet expedita ipsam molestiae odit quod, veritatis.</p>
-                                </div>
-                            </article>
-                        </div>
+                        <section className="grid grid-cols-1 lg:grid-cols-4 gap-5">
+                            {
+                                HOME_TESTIMONIALS.map((testimonial, index) => (
+                                    <blockquote key={index}
+                                                className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] rounded p-8 space-y-5">
+                                        <p className="text-center">{testimonial.description}</p>
+                                        <div className="flex space-x-2.5 justify-center items-center">
+                                            <Image src={testimonial.image} alt={testimonial.description} width={1000}
+                                                   height={1000}
+                                                   className="w-10 h-10 rounded-full"/>
+                                            <cite>- {testimonial.name}</cite>
+                                        </div>
+                                    </blockquote>
+                                ))
+                            }
+
+                        </section>
                     </section>
-                    <section className="section__pricing" id="pricing">
-                        <article>
-                            <h3 className="text-3xl font-bold">Pricing</h3>
-                            <p className="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-                                aspernatur.</p>
+                    <section id="pricing">
+                        <article className="space-y-5 text-center pb-16">
+                            <h3 className="text-3xl font-bold">Choose one our plans</h3>
                         </article>
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                            <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
-                                <div>
-                                    <h4>Basic</h4>
-                                    <span>$20</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-                                        aspernatur.</p>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>Lorem ipsum dolor sit amet.</li>
-                                        <li>Lorem ipsum dolor sit amet.</li>
-                                        <li>Lorem ipsum dolor sit amet.</li>
-                                        <li>Lorem ipsum dolor sit amet.</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <button>Starting using</button>
-                                </div>
-                            </article>
-                            <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
-                                <div>
-                                    <h4>Basic</h4>
-                                    <span>$20</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-                                        aspernatur.</p>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>Lorem ipsum dolor sit amet.</li>
-                                        <li>Lorem ipsum dolor sit amet.</li>
-                                        <li>Lorem ipsum dolor sit amet.</li>
-                                        <li>Lorem ipsum dolor sit amet.</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <button>Starting using</button>
-                                </div>
-                            </article>
-                            <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
-                                <div>
-                                    <h4>Basic</h4>
-                                    <span>$20</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-                                        aspernatur.</p>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>Lorem ipsum dolor sit amet.</li>
-                                        <li>Lorem ipsum dolor sit amet.</li>
-                                        <li>Lorem ipsum dolor sit amet.</li>
-                                        <li>Lorem ipsum dolor sit amet.</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <button>Starting using</button>
-                                </div>
-                            </article>
+                            {
+                                HOME_PLANS.map((plan, index) => (
+                                    <article key={index}
+                                             className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8 text-center space-y-10">
+                                        <div className="flex flex-col gap-2.5">
+                                            <h4 className="text-xl font-bold">{plan.name}</h4>
+                                            <span
+                                                className="text-2xl text-cyan-200 font-bold">${plan.price} / mth</span>
+                                            <p>{plan.description}</p>
+                                        </div>
+                                        <div>
+                                            <ul className="space-y-2.5">
+                                                {
+                                                    plan.features.map((feature, index) => (
+                                                        <li key={index}>
+                                                            <span
+                                                                className="text-cyan-200">✓ {feature.description}</span>
+                                                        </li>
+                                                    ))
+                                                }
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <button>Starting using</button>
+                                        </div>
+                                    </article>
+
+                                ))
+                            }
+
                         </div>
                     </section>
-                    <section className="section__faq" id="faq">
-                        <article>
+                    <section id="faq">
+                        <article className="space-y-5 text-center pb-16">
                             <h3 className="text-3xl font-bold">FAQ</h3>
                             <p className="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
                                 aspernatur.</p>
                         </article>
-                        <div>
-                            <article className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
-                                <div>
-                                    <h4>Lorem ipsum dolor sit amet.</h4>
-                                    <span>+</span>
-                                </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-                                        aspernatur.</p>
-                                </div>
-                            </article>
+                        <div className="space-y-5">
+                            {
+                                HOME_FAQS.map((faq, index) => (
+                                    <article
+                                        className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
+                                        <div key={index} className="space-y-5">
+                                            <button className="flex justify-between items-center w-full">
+                                                <h4 className="text-xl font-bold">{faq.question}</h4>
+                                                <span>
+                                                    <ChevronDownIcon className="h-5 w-5"/>
+                                                </span>
+                                            </button>
+                                            <p>{faq.answer}</p>
+                                        </div>
+                                    </article>
+                                ))
+                            }
                         </div>
                     </section>
                 </main>
-                <footer className="flex justify-center py-16">
+                <footer className="flex justify-center items-center py-16">
                     <span>© {new Date().getFullYear()} Lenstack Company. All rights reserved.</span>
                 </footer>
             </div>
