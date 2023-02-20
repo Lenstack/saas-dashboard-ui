@@ -41,10 +41,10 @@ export default function Home() {
                                 </p>
                             </article>
                             <div className="flex gap-5">
-                                <button
-                                    className="border dark:border-[#1f1f1f] bg-[#161616] text-white dark:bg-[#161616] px-8 py-5">Get
+                                <Link href="/authentication/sign-in"
+                                      className="border dark:border-[#1f1f1f] bg-[#161616] text-white dark:bg-[#161616] px-8 py-5">Get
                                     Started
-                                </button>
+                                </Link>
                                 <button
                                     className="flex justify-center items-center gap-2.5 px-3.5 py-5 border dark:border-[#1f1f1f]">
                             <span>
