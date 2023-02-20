@@ -27,10 +27,10 @@ export default function Home() {
                         </button>
                     </div>
                 </header>
-                <main className="space-y-10">
-                    <section className="section__hero" id="hero">
-                        <div className="space-y-5 mt-10">
-                            <article className="space-y-2.5">
+                <main className="space-y-36">
+                    <section className="flex items-center gap-20 py-32" id="hero">
+                        <div className="space-y-10 lg:w-3/6">
+                            <article className="space-y-10">
                                 <h1 className="text-6xl font-bold">
                                     Automate your workflow with <span
                                     className="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-rose-300">Lensaas</span>
@@ -53,8 +53,9 @@ export default function Home() {
                                 </button>
                             </div>
                         </div>
-                        <div className="hidden lg:flex">
-                            <Image src={HeroImgRight} alt="Picture of the author" className="rounded-2xl"/>
+                        <div className="hidden lg:flex w-5/6">
+                            <Image src={HeroImgRight} alt="Picture of the author"
+                                   className="rounded-2xl"/>
                         </div>
                     </section>
                     <section className="section__features" id="features">
