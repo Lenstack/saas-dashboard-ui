@@ -149,17 +149,15 @@ export default function Home() {
                         <div className="space-y-5">
                             {
                                 HOME_FAQS.map((faq, index) => (
-                                    <article
-                                        className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8">
-                                        <div key={index} className="space-y-5">
-                                            <button className="flex justify-between items-center w-full">
-                                                <h4 className="text-xl font-bold">{faq.question}</h4>
-                                                <span>
+                                    <article key={index}
+                                             className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] p-8 space-y-5">
+                                        <button className="flex justify-between items-center w-full">
+                                            <h4 className="text-xl font-bold">{faq.question}</h4>
+                                            <span>
                                                     <ChevronDownIcon className="h-5 w-5"/>
                                                 </span>
-                                            </button>
-                                            <p>{faq.answer}</p>
-                                        </div>
+                                        </button>
+                                        <p>{faq.answer}</p>
                                     </article>
                                 ))
                             }
