@@ -1,5 +1,4 @@
 import {Form} from "@/components";
-import Avatar from "boring-avatars";
 import {AuthenticationLayout} from "@/layouts";
 import {useValidateForm} from "@/hooks";
 import {useRouter} from "next/navigation";
@@ -34,26 +33,20 @@ export default function SignUp() {
     const validateForm = {
         name: (value: string) => {
             if (!value) {
-                return "Name is required";
+                return "Is required";
             }
         },
         email: (value: string) => {
             if (!value) {
-                return "Email is required";
+                return "Is required";
             }
-            if (!/\S+@\S+\.\S+/.test(value)) {
-                return "The email is invalid";
+            if (!value.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+                return "Invalid email format";
             }
         },
         password: (value: string) => {
             if (!value) {
-                return "Password is required";
-            }
-            if (value.length < 8) {
-                return "Password must be at least 8 characters";
-            }
-            if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(value)) {
-                return "Password must contain at least one number and one letter";
+                return "Is required";
             }
         }
     }
@@ -69,35 +62,40 @@ export default function SignUp() {
             <section className="w-full p-5 flex justify-center items-center">
                 <Form onSubmit={handleSubmit} method="post"
                       className="flex flex-col w-11/12 md:w-4/12 gap-5">
-                    <Form.Content className="flex flex-col gap-2.5 items-center py-5">
-                        <Form.Link to="/">
-                            <Avatar size={45} name="Avatar" variant="sunset"
-                                    colors={["#000000", "#31323E", "#7EEAEC", "#C0C0C0"]}/>
-                        </Form.Link>
+                    <Form.Content className="flex flex-col gap-2.5 py-5">
+                        <div className="flex flex-col gap-5">
+                            <h1 className="text-2xl">Welcome to <span
+                                className="text-cyan-300 underline"><Form.Link to="/">{process.env.NODE_ENV}</Form.Link></span> sign
+                                up to continue.
+                            </h1>
+                            <p>
+                                Its a platform for managing your business.
+                            </p>
+                        </div>
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5">
                         <Form.Label htmlFor="name" className="flex justify-between items-center">Your Name
-                            <span className="text-sm text-cyan-300">{errors.name}</span>
+                            <span className="text-sm text-red-300">{errors.name}</span>
                         </Form.Label>
                         <Form.Input type="name" id="name" name="name" placeholder="Name"
                                     onChange={handleChange} onBlur={handleBlur}
-                                    className={errors.name ? "border border-cyan-300" : ""}/>
+                                    className={errors.name ? "border border-red-300" : ""}/>
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5">
                         <Form.Label htmlFor="email" className="flex justify-between items-center">Your Email
-                            <span className="text-sm text-cyan-300">{errors.email}</span>
+                            <span className="text-sm text-red-300">{errors.email}</span>
                         </Form.Label>
                         <Form.Input type="email" id="email" name="email" placeholder="Email"
                                     onChange={handleChange} onBlur={handleBlur}
-                                    className={errors.email ? "border border-cyan-300" : ""}/>
+                                    className={errors.email ? "border border-red-300" : ""}/>
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5">
                         <Form.Label htmlFor="password" className="flex justify-between items-center">Password
-                            <span className="text-sm text-cyan-300">{errors.password}</span>
+                            <span className="text-sm text-red-300">{errors.password}</span>
                         </Form.Label>
                         <Form.Input type="password" id="password" name="password" placeholder="Password"
                                     onChange={handleChange} onBlur={handleBlur}
-                                    className={errors.password ? "border border-cyan-300" : ""}/>
+                                    className={errors.password ? "border border-red-300" : ""}/>
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5">
                         <Form.Button type="submit" className="btn">Sign Up</Form.Button>
