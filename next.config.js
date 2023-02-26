@@ -10,5 +10,8 @@ module.exports = withPWA({
     reactStrictMode: true,
     images: {
         domains: ['images.unsplash.com'],
+    },
+    env: {
+        API_URL: process.env.API_URL
     }
 })

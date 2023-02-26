@@ -24,6 +24,8 @@ export interface IFormInputProps {
     id: string
     name: string
     placeholder: string
+    onChange?: (event: FormEvent<HTMLInputElement>) => void
+    onBlur?: (event: FormEvent<HTMLInputElement>) => void
 }
 
 export interface IFormTextareaProps {
