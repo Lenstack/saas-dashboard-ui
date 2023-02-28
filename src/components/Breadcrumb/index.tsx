@@ -1,8 +1,8 @@
-import {IBreadcrumbItemProps, IBreadcrumbProps} from "@/interfaces";
-import Link from "next/link";
-import {toPascalCase} from "@/helpers";
-import {Fragment} from "react";
-import {useRouter} from "next/router";
+import {IBreadcrumbItemProps, IBreadcrumbProps} from "@/interfaces"
+import Link from "next/link"
+import {Fragment} from "react"
+import {useRouter} from "next/router"
+import {toPascalCase} from "@/utils"
 
 export const Breadcrumb = ({...restProps}: IBreadcrumbProps) => {
     const router = useRouter()
