@@ -16,5 +16,5 @@ export const ProtectedGuard = ({children}: IProtectedGuard) => {
     }
 
     useEffect(redirectIfNotAuthenticated, [redirectIfNotAuthenticated])
-    return user ? children : null;
+    return user ? <>{children}</> : null;
 }
