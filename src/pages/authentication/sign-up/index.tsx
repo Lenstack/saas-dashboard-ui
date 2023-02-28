@@ -13,6 +13,7 @@ export default function SignUp() {
                 headers: {
                     "Content-Type": "application/json",
                 },
+                credentials: "include",
                 body: JSON.stringify({
                     name,
                     email,
@@ -63,7 +64,7 @@ export default function SignUp() {
                 <Form onSubmit={handleSubmit} method="post"
                       className="flex flex-col w-11/12 md:w-4/12 gap-5">
                     <Form.Content className="flex flex-col gap-2.5 py-5">
-                        <div className="flex flex-col gap-5">
+                        <div className="flex flex-col gap-5 w-full">
                             <h1 className="text-2xl">Welcome to <span
                                 className="text-cyan-300 underline"><Form.Link to="/">{process.env.NODE_ENV}</Form.Link></span> sign
                                 up to continue.
