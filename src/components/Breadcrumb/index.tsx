@@ -1,6 +1,6 @@
 import {IBreadcrumbItemProps, IBreadcrumbProps} from "@/interfaces";
 import Link from "next/link";
-import {toPascalCase} from "@/utils";
+import {toPascalCase} from "@/helpers";
 import {Fragment} from "react";
 import {useRouter} from "next/router";
 
