@@ -42,14 +42,11 @@ export default function SignUp() {
             <section className="w-full p-5 flex justify-center items-center">
                 <Form onSubmit={handleSubmit} method="post"
                       className="flex flex-col w-11/12 md:w-4/12 gap-5">
-                    <Form.Header className="flex flex-col gap-5 py-5 w-full">
-                        <Form.Title className="text-2xl">Welcome to
-                            <span className="text-cyan-300 underline px-1.5">
-                                    <Form.Link to="/">{process.env.NODE_ENV}</Form.Link>
-                               </span>
-                            sign up to continue.
-                        </Form.Title>
-                        <Form.SubTitle>Its a platform for managing your business.</Form.SubTitle>
+                    <Form.Header className="flex flex-col gap-2.5 py-5 w-full">
+                        <Form.Title className="text-2xl">Sign Up Now and Simplify Student Grade Management.</Form.Title>
+                        <Form.Link to="/" className="text-xl text-cyan-300 underline">Go to home</Form.Link>
+                        <Form.SubTitle>Join our online community and access our grade automation application for more
+                            effective student management.</Form.SubTitle>
                     </Form.Header>
                     <Form.Content className="flex flex-col gap-2.5">
                         <Form.Label htmlFor="name" className="flex justify-between items-center">Your Name
