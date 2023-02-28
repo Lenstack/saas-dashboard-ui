@@ -8,6 +8,7 @@ import {
     IFormTextareaProps
 } from "@/interfaces"
 import Link from "next/link";
+import {IFormHeaderProps, IFormSubTitleProps, IFormTitleProps} from "@/interfaces";
 
 export const Form = ({method, onSubmit, children, ...restProps}: IFormProps) => {
     return (
@@ -22,6 +23,30 @@ Form.Content = ({children, ...restProps}: IFormContentProps) => {
         <div {...restProps}>
             {children}
         </div>
+    )
+}
+
+Form.Header = ({children, ...restProps}: IFormHeaderProps) => {
+    return (
+        <header {...restProps}>
+            {children}
+        </header>
+    )
+}
+
+Form.Title = ({children, ...restProps}: IFormTitleProps) => {
+    return (
+        <h1 {...restProps}>
+            {children}
+        </h1>
+    )
+}
+
+Form.SubTitle = ({children, ...restProps}: IFormSubTitleProps) => {
+    return (
+        <h2 {...restProps}>
+            {children}
+        </h2>
     )
 }
 

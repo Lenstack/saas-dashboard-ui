@@ -36,18 +36,13 @@ export default function ForgotPassword() {
             <section className="w-full p-5 flex justify-center items-center">
                 <Form onSubmit={handleSubmit} method="post"
                       className="flex flex-col w-11/12 md:w-4/12 gap-5">
-                    <Form.Content className="flex flex-col gap-2.5 items-center py-5">
-                        <div className="flex flex-col gap-5 w-full">
-                            <h1 className="text-2xl">
-                                Forgot Your Password?
-                            </h1>
-                            <Form.Link to="/" className="text-xl text-cyan-300 underline">Go to home</Form.Link>
-                            <p>
-                                No worries, we got you covered. Enter your email address and we will send you a
-                                verification code to reset your password.
-                            </p>
-                        </div>
-                    </Form.Content>
+                    <Form.Header className="flex flex-col gap-5 py-5 w-full">
+                        <Form.Title className="text-2xl">Forgot your password?</Form.Title>
+                        <Form.Link to="/" className="text-2xl text-cyan-300 underline">Go to home</Form.Link>
+                        <Form.SubTitle>
+                            No worries, we got you covered. Enter your email address and we will send you a verification code to reset your password.
+                        </Form.SubTitle>
+                    </Form.Header>
                     <Form.Content className="flex flex-col gap-2.5">
                         <Form.Label htmlFor="email" className="flex justify-between items-center">Your Email
                             <span className="text-sm text-red-300">{errors.email}</span>

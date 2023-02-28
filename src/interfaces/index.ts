@@ -7,7 +7,10 @@ export type {
     IFormSelectProps,
     IFormButtonProps,
     IFormLinkProps,
-    IFormErrorProps
+    IFormErrorProps,
+    IFormHeaderProps,
+    IFormTitleProps,
+    IFormSubTitleProps,
 } from "./IForm"
 
 export type {ICardProps, ICardHeaderProps, ICardBodyProps, ICardFooterProps} from "./ICard"

@@ -12,6 +12,21 @@ export interface IFormContentProps {
     children: ReactNode
 }
 
+export interface IFormHeaderProps {
+    className?: string
+    children: ReactNode
+}
+
+export interface IFormTitleProps {
+    className?: string
+    children: ReactNode
+}
+
+export interface IFormSubTitleProps {
+    className?: string
+    children: ReactNode
+}
+
 export interface IFormLabelProps {
     className?: string
     htmlFor: string
