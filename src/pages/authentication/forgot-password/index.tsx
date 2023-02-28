@@ -1,14 +1,44 @@
 import {Form} from "@/components";
-import {FormEvent} from "react";
-import Avatar from "boring-avatars";
 import {AuthenticationLayout} from "@/layouts";
+import {useValidateForm} from "@/hooks";
 
 export default function ForgotPassword() {
+    const handleRunSubmit = async (values: any) => {
+        const {email} = values
+        try {
+            const response = await fetch(`${process.env.API_URL}/authentication/verification_code`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                credentials: "include",
+                body: JSON.stringify({
+                    email,
+                })
+            })
 
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
-        console.log(event.target)
+            if (response.status === 200) {
+                console.log("ok")
+            }
+
+        } catch (err) {
+            console.log("err: " + err);
+        }
     }
+    const validateForm = {
+        email: (value: string) => {
+            if (!value) {
+                return "Is required";
+            }
+            if (!value.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
+                return "Invalid email format";
+            }
+        }
+    }
+    const {errors, handleChange, handleBlur, handleSubmit} = useValidateForm({
+        email: null,
+        password: null,
+    }, validateForm, handleRunSubmit)
 
     return (
         <AuthenticationLayout>
@@ -16,21 +46,29 @@ export default function ForgotPassword() {
                 <Form onSubmit={handleSubmit} method="post"
                       className="flex flex-col w-11/12 md:w-4/12 gap-5">
                     <Form.Content className="flex flex-col gap-2.5 items-center py-5">
-                        <Form.Link to="/">
-                            <Avatar size={45} name="Avatar" variant="sunset"
-                                    colors={["#000000", "#31323E", "#7EEAEC", "#C0C0C0"]}/>
-                        </Form.Link>
+                        <div className="flex flex-col gap-5 w-full">
+                            <h1 className="text-2xl">
+                                Forgot Your Password?
+                            </h1>
+                            <Form.Link to="/" className="text-xl text-cyan-300 underline">Go to home</Form.Link>
+                            <p>
+                                No worries, we got you covered. Enter your email address and we will send you a verification code to reset your password.
+                            </p>
+                        </div>
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5">
-                        <Form.Label htmlFor="email">Email</Form.Label>
-                        <Form.Input type="email" id="email" name="email"
-                                    placeholder="Enter your email"/>
+                        <Form.Label htmlFor="email" className="flex justify-between items-center">Your Email
+                            <span className="text-sm text-red-300">{errors.email}</span>
+                        </Form.Label>
+                        <Form.Input type="email" id="email" name="email" placeholder="Enter your email"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur} className={errors.email ? "border border-red-300" : ""}/>
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5">
-                        <Form.Button type="submit" className="btn">Reset Password</Form.Button>
+                        <Form.Button type="submit" className="btn">Send Reset Verification</Form.Button>
                     </Form.Content>
                     <Form.Content className="flex flex-col gap-2.5 items-center">
-                        <Form.Link to="/authentication/sign-in">Go back to Sign In?</Form.Link>
+                        <Form.Link to="/authentication/sign-in">Go back to Sign In</Form.Link>
                     </Form.Content>
                 </Form>
             </section>
