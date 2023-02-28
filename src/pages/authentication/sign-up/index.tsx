@@ -2,13 +2,14 @@ import {Form} from "@/components";
 import {AuthenticationLayout} from "@/layouts";
 import {useValidateForm} from "@/hooks";
 import {useRouter} from "next/navigation";
+import {SignUpFormRules} from "@/helpers";
 
 export default function SignUp() {
     const router = useRouter()
     const handleRunSubmit = async (values: any) => {
         const {name, email, password} = values
         try {
-            await fetch(`${process.env.API_URL}/authentication/sign_up`, {
+            const response = await fetch(`${process.env.API_URL}/authentication/sign_up`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -19,45 +20,23 @@ export default function SignUp() {
                     email,
                     password,
                 })
-            }).then((res) => {
-                if (res.status === 200) {
-                    router.push("/authentication/sign-in");
-                }
-            }).catch((err) => {
-                console.log("err: " + err);
             })
+
+            if (response.status === 200) {
+                router.push("/authentication/sign-in");
+            }
 
         } catch (err) {
             console.log("err: " + err);
         }
     }
-    const validateForm = {
-        name: (value: string) => {
-            if (!value) {
-                return "Is required";
-            }
-        },
-        email: (value: string) => {
-            if (!value) {
-                return "Is required";
-            }
-            if (!value.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
-                return "Invalid email format";
-            }
-        },
-        password: (value: string) => {
-            if (!value) {
-                return "Is required";
-            }
-        }
-    }
+
     const {errors, handleChange, handleBlur, handleSubmit} = useValidateForm({
         name: null,
         email: null,
         password: null,
-    }, validateForm, handleRunSubmit)
+    }, SignUpFormRules, handleRunSubmit)
 
-    console.log(errors)
     return (
         <AuthenticationLayout>
             <section className="w-full p-5 flex justify-center items-center">

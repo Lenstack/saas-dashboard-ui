@@ -1,6 +1,7 @@
 import {Form} from "@/components";
 import {AuthenticationLayout} from "@/layouts";
 import {useValidateForm} from "@/hooks";
+import {ForgotPasswordFormRules} from "@/helpers";
 
 export default function ForgotPassword() {
     const handleRunSubmit = async (values: any) => {
@@ -25,20 +26,10 @@ export default function ForgotPassword() {
             console.log("err: " + err);
         }
     }
-    const validateForm = {
-        email: (value: string) => {
-            if (!value) {
-                return "Is required";
-            }
-            if (!value.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
-                return "Invalid email format";
-            }
-        }
-    }
     const {errors, handleChange, handleBlur, handleSubmit} = useValidateForm({
         email: null,
         password: null,
-    }, validateForm, handleRunSubmit)
+    }, ForgotPasswordFormRules, handleRunSubmit)
 
     return (
         <AuthenticationLayout>
@@ -52,7 +43,8 @@ export default function ForgotPassword() {
                             </h1>
                             <Form.Link to="/" className="text-xl text-cyan-300 underline">Go to home</Form.Link>
                             <p>
-                                No worries, we got you covered. Enter your email address and we will send you a verification code to reset your password.
+                                No worries, we got you covered. Enter your email address and we will send you a
+                                verification code to reset your password.
                             </p>
                         </div>
                     </Form.Content>

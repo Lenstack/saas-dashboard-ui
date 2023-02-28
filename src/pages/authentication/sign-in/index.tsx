@@ -2,6 +2,7 @@ import {Form} from "@/components";
 import {useRouter} from 'next/navigation';
 import {AuthenticationLayout} from "@/layouts";
 import {useValidateForm} from "@/hooks";
+import {SignInFormRules} from "@/helpers";
 
 export default function SignIn() {
     const router = useRouter()
@@ -21,10 +22,6 @@ export default function SignIn() {
             })
 
             if (response.status === 200) {
-                const data = await response.json()
-                localStorage.setItem("access_token", data.access_token)
-                localStorage.setItem("expires_in", data.expires_in)
-                localStorage.setItem("refresh_token", data.refresh_token)
                 router.push("/dashboard");
             }
 
@@ -32,25 +29,11 @@ export default function SignIn() {
             console.log("err: " + err);
         }
     }
-    const validateForm = {
-        email: (value: string) => {
-            if (!value) {
-                return "Is required";
-            }
-            if (!value.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
-                return "Invalid email format";
-            }
-        },
-        password: (value: string) => {
-            if (!value) {
-                return "Is required";
-            }
-        }
-    }
+
     const {errors, handleChange, handleBlur, handleSubmit} = useValidateForm({
         email: null,
         password: null,
-    }, validateForm, handleRunSubmit)
+    }, SignInFormRules, handleRunSubmit)
 
     return (
         <AuthenticationLayout>
