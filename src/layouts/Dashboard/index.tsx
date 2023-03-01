@@ -49,7 +49,9 @@ export const DashboardLayout = ({children}: ILayoutProps) => {
                                             <Link href="/">Send Feedback</Link>
                                         </li>
                                         <li>
-                                            <Link href="/authentication/sign-in">Sign Out</Link>
+                                            <Link href="/" onClick={()=>{
+                                                localStorage.removeItem('user')
+                                            }}>Sign Out</Link>
                                         </li>
                                     </ul>
                                     <div

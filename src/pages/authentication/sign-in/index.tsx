@@ -22,6 +22,16 @@ export default function SignIn() {
             })
 
             if (response.status === 200) {
+                const {access_token, refresh_token, expires_in} = await response.json()
+
+                const user = {
+                    access_token,
+                    refresh_token,
+                    expires_in,
+                }
+
+                localStorage.setItem('user', JSON.stringify(user))
+
                 router.push("/dashboard");
             }
 

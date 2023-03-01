@@ -1,18 +1,39 @@
-import {createContext, useContext, useEffect} from "react";
-import {IUserContext, IUserProvider} from "@/interfaces";
+import {createContext, useEffect, useMemo, useState} from "react";
+import {IUserProvider, IUser} from "@/interfaces";
 
-export const UserContext = createContext({} as IUserContext)
+const initialUser = {} as IUser;
+export const UserContext = createContext({
+    user: initialUser,
+    setUser: (user: IUser) => {
+    }
+})
 
 export const UserProvider = ({children}: IUserProvider) => {
-    const {user, setUser} = useContext(UserContext)
+    const [user, setUser] = useState(initialUser)
+
+    const isSignIn = () => {
+        const sessionUser = localStorage.getItem('user')
+        if (!sessionUser) {
+            if (user.loggedIn) {
+                setUser(initialUser)
+            }
+            console.log("No access token")
+            return;
+        }
+        if (!user.loggedIn) {
+            setUser({loggedIn: true})
+        }
+        console.log("Access token")
+    }
 
     useEffect(() => {
-        // Get userId from token cookie
-        console.log('UserContext', user)
-    }, [user])
+        isSignIn()
+    }, [])
+
+    const contextValue = useMemo(() => ({user, setUser}), [user])
 
     return (
-        <UserContext.Provider value={{user, setUser}}>
+        <UserContext.Provider value={contextValue}>
             {children}
         </UserContext.Provider>
     )
