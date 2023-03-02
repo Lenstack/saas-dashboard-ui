@@ -19,7 +19,7 @@ export const HomeFaqContainer = () => {
                 {HOME_FAQS.map((faq, index) => (
                     <div key={index}
                          className="p-12 space-y-6 rounded border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616]">
-                        <div className="flex justify-between">
+                        <div className="flex justify-between gap-2.5">
                             <dt className="text-xl ">{faq.question}</dt>
                             <button onClick={() => handleToggle(index)}>
                                 <ChevronDownIcon
