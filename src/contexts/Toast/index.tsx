@@ -9,12 +9,7 @@ export const ToastContext = createContext({
 })
 
 export const ToastProvider = ({children}: IToastProvider) => {
-    const [showToast, setShowToast] = useState({
-        type: "info",
-        message: "Default message",
-        location: "topRight",
-    } as boolean | IToast);
-
+    const [showToast, setShowToast] = useState(false as boolean | IToast);
     return (
         <ToastContext.Provider value={{showToast, setShowToast}}>
             {typeof showToast === "object" && <Toast {...showToast} />}
