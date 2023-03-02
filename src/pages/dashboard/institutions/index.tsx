@@ -43,11 +43,15 @@ export default function Institutions({institutions}: any) {
 
 const ModalForm = () => {
     const {showModal, setShowModal} = useContext(ModalContext)
-    const {showToast, setShowToast} = useContext(ToastContext)
+    const {setShowToast} = useContext(ToastContext)
     const handleSubmit = (e: any) => {
         e.preventDefault()
         setShowModal(!showModal)
-        setShowToast(!showToast)
+        setShowToast({
+            type: "success",
+            location: "topCenter",
+            message: "Institution created successfully"
+        })
         console.log(e.target.name)
     }
 

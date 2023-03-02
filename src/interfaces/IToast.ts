@@ -1,6 +1,12 @@
+import {ReactNode} from "react";
+
 export interface IToast {
     type: "success" | "error" | "info" | "warning";
     message: string;
-    location: "top-center" | "top-left" | "top-right" | "bottom-center" | "bottom-left" | "bottom-right";
+    location: "topCenter" | "topLeft" | "topRight" | "bottomCenter" | "bottomLeft" | "bottomRight";
     duration?: number;
+}
+
+export interface IToastProvider {
+    children: ReactNode;
 }

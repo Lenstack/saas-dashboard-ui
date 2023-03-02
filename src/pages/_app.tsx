@@ -1,7 +1,7 @@
 import '@/styles/globals.css'
 import type {AppProps} from 'next/app'
 import Head from "next/head"
-import {UserProvider} from "@/contexts"
+import {ToastProvider, UserProvider} from "@/contexts"
 
 export default function App({Component, pageProps}: AppProps) {
     return (
@@ -16,7 +16,9 @@ export default function App({Component, pageProps}: AppProps) {
                 <link rel="apple-touch-icon" href="/images/icons/icon-192x192.png"/>
             </Head>
             <UserProvider>
-                <Component {...pageProps} />
+                <ToastProvider>
+                    <Component {...pageProps} />
+                </ToastProvider>
             </UserProvider>
         </>
     )
