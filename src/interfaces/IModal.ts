@@ -6,3 +6,7 @@ export interface IModal {
     header?: ReactNode;
     content?: ReactNode;
 }
+
+export interface IModalProvider {
+    children: ReactNode;
+}

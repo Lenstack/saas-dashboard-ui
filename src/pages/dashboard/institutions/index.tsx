@@ -1,24 +1,19 @@
 import {MODULE_ROUTES} from "@/constants";
 import Link from "next/link";
-import {Card, Form, Modal, Toast} from "@/components";
+import {Card, Form, Modal} from "@/components";
 import {GetStaticProps} from "next";
 import {DashboardLayout} from "@/layouts";
 import {useContext, useState} from "react";
 import {ModalContext, ToastContext} from "@/contexts";
 
 export default function Institutions({institutions}: any) {
-    const [showModal, setShowModal] = useState(false)
-
     return (
-
         <DashboardLayout>
             <div className="flex flex-col gap-2.5">
                 <section className="flex justify-between items-center">
                     <span>Create a new institution</span>
-                    <ModalContext.Provider value={{showModal, setShowModal}}>
-                        <Modal title="New Institution" header="New Institution" subtitle="Create a new institution"
-                               content={<ModalForm/>}/>
-                    </ModalContext.Provider>
+                    <Modal title="New Institution" header="New Institution" subtitle="Create a new institution"
+                           content={<ModalForm/>}/>
                 </section>
                 <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2.5">
                     {
@@ -52,7 +47,6 @@ const ModalForm = () => {
             location: "topRight",
             message: "Institution created successfully"
         })
-        console.log(e.target.name)
     }
 
     return (

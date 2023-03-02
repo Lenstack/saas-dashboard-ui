@@ -18,7 +18,7 @@ export type {INavbarProps, INavbarContentProps, INavbarItemProps} from "./INavba
 export type {ILayoutProps} from "./ILayout"
 export type {IModuleRoutes, IRoutes} from "./IRoutes"
 export type {IBreadcrumbProps, IBreadcrumbItemProps} from "./IBreadcrumb"
-export type {IModal} from "./IModal"
+export type {IModal, IModalProvider} from "./IModal"
 export type {IToast, IToastProvider} from "./IToast"
 export type {IUser, IUserProvider} from "./IUser"
 export type {IProtectedGuard} from "./IProtectedGuard"

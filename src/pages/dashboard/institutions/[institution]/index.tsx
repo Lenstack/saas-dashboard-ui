@@ -7,16 +7,15 @@ import {useContext, useState} from "react";
 export default function Institution() {
     const router = useRouter()
     const {institution} = router.query
-    const [showModal, setShowModal] = useState(false)
+
     return (
         <DashboardLayout>
             <div>
                 <section className="flex justify-between items-center">
-                    <span>Create a new group for <span className="text-orange-200">{institution}</span> institution</span>
-                    <ModalContext.Provider value={{showModal, setShowModal}}>
-                        <Modal title={"New Group"} header={"New Group"} subtitle={"Create a new group"}
-                               content={<ModalForm/>}/>
-                    </ModalContext.Provider>
+                    <span>Create a new group for <span
+                        className="text-orange-200">{institution}</span> institution</span>
+                    <Modal title={"New Group"} header={"New Group"} subtitle={"Create a new group"}
+                           content={<ModalForm/>}/>
                 </section>
             </div>
         </DashboardLayout>
@@ -28,7 +27,6 @@ const ModalForm = () => {
     const handleSubmit = (e: any) => {
         e.preventDefault()
         setShowModal(!showModal)
-        console.log(e.target.name)
     }
     return (
         <Form onSubmit={handleSubmit} method="post" className="h-full flex flex-col gap-5">
