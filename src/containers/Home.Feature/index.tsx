@@ -1,27 +1,21 @@
 import {HOME_FEATURES} from "@/fixtures";
 
 export const HomeFeatureContainer = () => {
-    return(
-        <section id="features">
-            <article className="space-y-5 text-center pb-16">
-                <h3 className="text-3xl font-bold">Services is really easy to use</h3>
-
-            </article>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+    return (
+        <section className="py-16 flex flex-col gap-6" id="features">
+            <h3 className="text-2xl text-center my-3 font-semibold">
+                Our Features
+            </h3>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 my-3">
                 {
                     HOME_FEATURES.map((feature, index) => (
                         <article key={index}
-                                 className="border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616]
-                                dark:hover:bg-cyan-300 dark:hover:text-black rounded cursor-pointer p-8 space-y-2.5">
-                            <div className="flex space-x-2.5">
-                                <span>{feature.icon}</span>
-                                <h4 className="text-lg">{feature.title}</h4>
-                            </div>
-                            <p className="">{feature.description}</p>
+                                 className="p-8 rounded flex flex-col gap-6 border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] cursor-pointer">
+                            <span className="text-orange-300">{feature.icon}</span>
+                            <span className="text-lg">{feature.title}</span>
                         </article>
                     ))
                 }
-
             </div>
         </section>
     )

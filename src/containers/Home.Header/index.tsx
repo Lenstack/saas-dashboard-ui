@@ -9,7 +9,7 @@ import {UserContext} from "@/contexts";
 export const HomeHeaderContainer = () => {
     const {user} = useContext(UserContext)
     return (
-        <header className="flex justify-between items-center align-middle">
+        <header className="py-8 flex justify-between items-center align-middle">
             <Link href="/"><Avatar size={32} name="Avatar" variant="sunset"
                                    colors={["#000000", "#31323E", "#7EEAEC", "#C0C0C0"]}/></Link>
             <section className="hidden lg:flex lg:gap-32">

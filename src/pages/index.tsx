@@ -1,6 +1,7 @@
 import {
     HomeFaqContainer,
-    HomeFeatureContainer, HomeFooterContainer,
+    HomeFeatureContainer,
+    HomeFooterContainer,
     HomeHeaderContainer,
     HomeHeroContainer,
     HomePlanContainer,
@@ -9,18 +10,14 @@ import {
 
 export default function Home() {
     return (
-        <div className="px-6 mx-auto max-w-7xl">
-            <div className="py-10">
-                <HomeHeaderContainer/>
-                <main className="space-y-36">
-                    <HomeHeroContainer/>
-                    <HomeFeatureContainer/>
-                    <HomeTestimonialContainer/>
-                    <HomePlanContainer/>
-                    <HomeFaqContainer/>
-                </main>
-                <HomeFooterContainer/>
-            </div>
-        </div>
+        <main className="my-6 px-6 mx-auto max-w-6xl">
+            <HomeHeaderContainer/>
+            <HomeHeroContainer/>
+            <HomeFeatureContainer/>
+            <HomeTestimonialContainer/>
+            <HomePlanContainer/>
+            <HomeFaqContainer/>
+            <HomeFooterContainer/>
+        </main>
     )
 }
