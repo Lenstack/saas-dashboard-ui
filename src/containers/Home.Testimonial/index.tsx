@@ -21,7 +21,7 @@ export const HomeTestimonialContainer = () => {
                                     className="w-12 h-12 rounded-full mr-4 object-cover"
                                 />
                                 <div className="flex flex-col gap-1.5">
-                                    <span className="text-cyan-600 dark:text-blue-200 ">{testimonial.name}</span>
+                                    <span className="text-[#5e60ce] dark:text-[#64dfdf]">{testimonial.name}</span>
                                     <span className="text-gray-600 dark:text-gray-400 text-sm">{testimonial.role}</span>
                                 </div>
                             </cite>

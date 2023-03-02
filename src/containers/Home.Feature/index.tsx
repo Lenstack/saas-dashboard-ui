@@ -11,7 +11,7 @@ export const HomeFeatureContainer = () => {
                     HOME_FEATURES.map((feature, index) => (
                         <article key={index}
                                  className="p-8 rounded flex flex-col gap-6 border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616] cursor-pointer">
-                            <span className="text-orange-300">{feature.icon}</span>
+                            <span className="text-[#5e60ce] dark:text-[#64dfdf]">{feature.icon}</span>
                             <span className="text-lg">{feature.title}</span>
                         </article>
                     ))
