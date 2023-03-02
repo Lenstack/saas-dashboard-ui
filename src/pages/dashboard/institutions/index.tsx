@@ -48,8 +48,8 @@ const ModalForm = () => {
         e.preventDefault()
         setShowModal(!showModal)
         setShowToast({
-            type: "success",
-            location: "topCenter",
+            type: "error",
+            location: "topRight",
             message: "Institution created successfully"
         })
         console.log(e.target.name)
