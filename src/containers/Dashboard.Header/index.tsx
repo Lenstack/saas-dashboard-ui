@@ -47,15 +47,17 @@ export const DashboardHeaderContainer = () => {
                                 </li>
                             </ul>
                             <div
-                                className="flex justify-between border rounded dark:border-[#1f1f1f] p-1.5 bg-white dark:bg-[#161616]">
-                                <label>
-                                    <span>Theme</span>
+                                className="flex justify-between border rounded dark:border-[#1f1f1f] p-1.5 bg-white dark:bg-[#111111]">
+                                <label className="w-full flex items-center justify-between space-x-2">
+                                    <span>Theme:</span>
+                                    <select
+                                        className="p-1 px-4 rounded-md bg-[#FAFAFA] dark:bg-[#161616]"
+                                    >
+                                        <option value="system">System</option>
+                                        <option value="dark">Dark</option>
+                                        <option value="light">Light</option>
+                                    </select>
                                 </label>
-                                <select className="bg-white dark:bg-[#111111] px-2.5">
-                                    <option value="system">System</option>
-                                    <option value="dark">Dark</option>
-                                    <option value="light">Light</option>
-                                </select>
                             </div>
                         </div>
                     </details>

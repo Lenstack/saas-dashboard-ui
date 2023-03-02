@@ -6,7 +6,7 @@ export const DashboardLayout = ({children}: ILayoutProps) => {
     return (
         <ModalProvider>
             <DashboardHeaderContainer/>
-            <main className="p-10">
+            <main className="p-10 mx-auto max-w-7xl">
                 {children}
             </main>
         </ModalProvider>

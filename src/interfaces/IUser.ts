@@ -6,4 +6,7 @@ export interface IUserProvider {
 
 export interface IUser {
     loggedIn: boolean
+    user: {
+        token: string
+    }
 }

@@ -3,7 +3,7 @@ import Avatar from "boring-avatars";
 import {Navbar} from "@/components";
 import {AUTH_ROUTES, HOME_ROUTES} from "@/constants";
 import {Bars2Icon} from "@heroicons/react/24/outline";
-import {useContext} from "react";
+import {useContext, useEffect, useState} from "react";
 import {UserContext} from "@/contexts";
 
 export const HomeHeaderContainer = () => {
