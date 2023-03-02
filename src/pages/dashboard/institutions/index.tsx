@@ -3,7 +3,7 @@ import Link from "next/link";
 import {Card, Form, Modal} from "@/components";
 import {GetStaticProps} from "next";
 import {DashboardLayout} from "@/layouts";
-import {useContext, useState} from "react";
+import {useContext} from "react";
 import {ModalContext, ToastContext} from "@/contexts";
 
 export default function Institutions({institutions}: any) {
@@ -48,7 +48,6 @@ const ModalForm = () => {
             message: "Institution created successfully"
         })
     }
-
     return (
         <Form onSubmit={handleSubmit} method="post" className="h-full flex flex-col gap-5">
             <Form.Content className="flex flex-col gap-2.5">

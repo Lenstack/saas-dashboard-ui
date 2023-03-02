@@ -2,7 +2,7 @@ import {useRouter} from "next/router";
 import {DashboardLayout} from "@/layouts";
 import {Form, Modal} from "@/components";
 import {ModalContext} from "@/contexts";
-import {useContext, useState} from "react";
+import {useContext} from "react";
 
 export default function Institution() {
     const router = useRouter()
