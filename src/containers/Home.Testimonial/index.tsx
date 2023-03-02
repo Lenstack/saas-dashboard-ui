@@ -13,7 +13,7 @@ export const HomeTestimonialContainer = () => {
                             flex flex-col"
                             key={index}
                         >
-                            <p className="mb-8">{testimonial.description}</p>
+                            <p className="mb-8 text-lg font-light">{testimonial.description}</p>
                             <cite className="flex items-center mt-auto">
                                 <img
                                     src={testimonial.image}
