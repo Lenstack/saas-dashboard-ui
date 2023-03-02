@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import HeroImgRight from "@/assets/images/hero.jpg";
+import HeroImgRight from "@/assets/images/hero2.jpg";
 
 export const HomeHeroContainer = () => {
     return (
@@ -22,7 +22,7 @@ export const HomeHeroContainer = () => {
                     </Link>
                 </div>
             </article>
-            <article className="hidden lg:flex lg:w-2/3">
+            <article className="hidden lg:flex lg:w-5/6">
                 <Image src={HeroImgRight} alt="hero image" className="rounded-xl"/>
             </article>
         </section>
