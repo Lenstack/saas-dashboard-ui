@@ -8,7 +8,7 @@ export const ProtectedGuard = ({children}: IProtectedGuard) => {
     const router = useRouter()
 
     const redirectIfNotAuthenticated = () => {
-        if (!user) {
+        if (!user.loggedIn) {
             router.push('/authentication/sign-in').then((response) => {
                 console.log(response)
             })

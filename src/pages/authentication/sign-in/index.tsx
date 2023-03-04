@@ -3,8 +3,11 @@ import {useRouter} from 'next/navigation';
 import {AuthenticationLayout} from "@/layouts";
 import {useValidateForm} from "@/hooks";
 import {SignInFormRules} from "@/helpers";
+import {useContext} from "react";
+import {UserContext} from "@/contexts";
 
 export default function SignIn() {
+    const {setUser} = useContext(UserContext)
     const router = useRouter()
     const handleRunSubmit = async (values: any) => {
         const {email, password} = values
@@ -23,15 +26,13 @@ export default function SignIn() {
 
             if (response.status === 200) {
                 const {access_token, refresh_token, expires_in} = await response.json()
-
-                const user = {
+                const userSession = {
                     access_token,
                     refresh_token,
-                    expires_in,
+                    expires_in
                 }
-
-                localStorage.setItem('user', JSON.stringify(user))
-
+                localStorage.setItem("user", JSON.stringify(userSession))
+                setUser({loggedIn: true, user: {access_token, refresh_token, expires_in}})
                 router.push("/dashboard");
             }
 

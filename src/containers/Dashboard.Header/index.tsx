@@ -2,8 +2,11 @@ import {Breadcrumb, Navbar} from "@/components";
 import Link from "next/link";
 import Avatar from "boring-avatars";
 import {DASHBOARD_ROUTES} from "@/constants";
+import {useContext} from "react";
+import {UserContext} from "@/contexts";
 
 export const DashboardHeaderContainer = () => {
+    const {setUser} = useContext(UserContext)
     return (
         <header className="p-10 flex flex-col gap-5 border-b dark:border-[#1f1f1f]">
             <div className="flex items-center gap-2.5">
@@ -42,7 +45,8 @@ export const DashboardHeaderContainer = () => {
                                 </li>
                                 <li>
                                     <Link href="/" onClick={() => {
-                                        localStorage.removeItem('user')
+                                        setUser({loggedIn: false, user: null})
+                                        localStorage.removeItem("user")
                                     }}>Sign Out</Link>
                                 </li>
                             </ul>

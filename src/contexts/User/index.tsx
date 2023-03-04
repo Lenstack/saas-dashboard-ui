@@ -1,6 +1,5 @@
-import {createContext, useEffect, useMemo, useState} from "react";
+import {createContext, useState} from "react";
 import {IUserProvider, IUser} from "@/interfaces";
-
 
 export const UserContext = createContext({
     user: {} as IUser,

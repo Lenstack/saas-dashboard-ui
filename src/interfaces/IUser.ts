@@ -6,7 +6,11 @@ export interface IUserProvider {
 
 export interface IUser {
     loggedIn: boolean
-    user: {
-        token: string
-    }
+    user: IUserCredentials | null
+}
+
+export interface IUserCredentials {
+    access_token: string
+    refresh_token: string
+    expires_in: number
 }
