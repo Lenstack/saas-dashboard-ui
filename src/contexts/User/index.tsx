@@ -4,7 +4,7 @@ import { IUserProvider, IUserContext, IUser } from "@/interfaces";
 export const UserContext = createContext({} as IUserContext);
 
 export const UserProvider = ({ children }: IUserProvider) => {
-    const STORAGE_KEY = "user";
+    const STORAGE_KEY = useMemo(() => "user", []);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [user, setUser] = useState({} as IUser);
 
