@@ -1,14 +1,15 @@
 import {Form} from "@/components";
-import {useRouter} from 'next/navigation';
 import {AuthenticationLayout} from "@/layouts";
 import {useValidateForm} from "@/hooks";
 import {SignInFormRules} from "@/helpers";
 import {useContext} from "react";
 import {UserContext} from "@/contexts";
+import {useRouter} from "next/router";
 
 export default function SignIn() {
-    const {setUser} = useContext(UserContext)
+    const {signIn} = useContext(UserContext)
     const router = useRouter()
+
     const handleRunSubmit = async (values: any) => {
         const {email, password} = values
         try {
@@ -26,14 +27,8 @@ export default function SignIn() {
 
             if (response.status === 200) {
                 const {access_token, refresh_token, expires_in} = await response.json()
-                const userSession = {
-                    access_token,
-                    refresh_token,
-                    expires_in
-                }
-                localStorage.setItem("user", JSON.stringify(userSession))
-                setUser({loggedIn: true, user: {access_token, refresh_token, expires_in}})
-                router.push("/dashboard");
+                signIn({accessToken: access_token, refreshToken: refresh_token, expiresIn: expires_in})
+                await router.push("/dashboard")
             }
 
         } catch (err) {
@@ -53,7 +48,8 @@ export default function SignIn() {
                       className="flex flex-col w-11/12 md:w-4/12 gap-5">
                     <Form.Header className="flex flex-col gap-2.5 py-5 w-full">
                         <Form.Title className="text-2xl">Access Your Grade Automation Account.</Form.Title>
-                        <Form.Link to="/" className="text-xl text-teal-500 dark:text-[#FDB28B] underline">Go to home</Form.Link>
+                        <Form.Link to="/" className="text-xl text-teal-500 dark:text-[#FDB28B] underline">Go to
+                            home</Form.Link>
                         <Form.SubTitle>Sign in to our application and start simplifying your student grade management in
                             a secure and quick way.</Form.SubTitle>
                     </Form.Header>

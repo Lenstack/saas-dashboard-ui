@@ -5,12 +5,16 @@ export interface IUserProvider {
 }
 
 export interface IUser {
-    loggedIn: boolean
-    user: IUserCredentials | null
+    accessToken: string,
+    refreshToken: string,
+    expiresIn: string,
 }
 
-export interface IUserCredentials {
-    access_token: string
-    refresh_token: string
-    expires_in: number
+export interface IUserContext {
+    isAuthenticated: boolean;
+    signIn: (user: IUser) => void;
+    signOut: () => void;
+    user: IUser;
 }
+
+

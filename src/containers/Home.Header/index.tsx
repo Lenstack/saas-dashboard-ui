@@ -7,7 +7,7 @@ import {useContext, useEffect, useState} from "react";
 import {UserContext} from "@/contexts";
 
 export const HomeHeaderContainer = () => {
-    const {user} = useContext(UserContext)
+    const {isAuthenticated} = useContext(UserContext)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     const toggleMenu = () => {
@@ -21,7 +21,7 @@ export const HomeHeaderContainer = () => {
             <section className="hidden lg:flex lg:gap-32">
                 <Navbar items={HOME_ROUTES} className="space-x-5"/>
                 {
-                    user.loggedIn ? (
+                    isAuthenticated ? (
                         <Link href="/dashboard" className="space-x-5">Dashboard</Link>
                     ) : (
                         <Navbar items={AUTH_ROUTES} className="space-x-5"/>

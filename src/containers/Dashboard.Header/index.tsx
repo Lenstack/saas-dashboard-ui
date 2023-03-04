@@ -4,9 +4,17 @@ import Avatar from "boring-avatars";
 import {DASHBOARD_ROUTES} from "@/constants";
 import {useContext} from "react";
 import {UserContext} from "@/contexts";
+import {useRouter} from "next/router";
 
 export const DashboardHeaderContainer = () => {
-    const {setUser} = useContext(UserContext)
+    const {signOut} = useContext(UserContext)
+    const router = useRouter()
+
+    const handleSignOut = async () => {
+        signOut()
+        await router.push("/authentication/sign-in")
+    }
+
     return (
         <header className="p-10 flex flex-col gap-5 border-b dark:border-[#1f1f1f]">
             <div className="flex items-center gap-2.5">
@@ -44,10 +52,7 @@ export const DashboardHeaderContainer = () => {
                                     <Link href="/">Send Feedback</Link>
                                 </li>
                                 <li>
-                                    <Link href="/" onClick={() => {
-                                        setUser({loggedIn: false, user: null})
-                                        localStorage.removeItem("user")
-                                    }}>Sign Out</Link>
+                                    <Link href="/" onClick={handleSignOut}>Sign Out</Link>
                                 </li>
                             </ul>
                             <div
