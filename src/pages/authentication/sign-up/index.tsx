@@ -44,7 +44,7 @@ export default function SignUp() {
                       className="flex flex-col w-11/12 md:w-4/12 gap-5">
                     <Form.Header className="flex flex-col gap-2.5 py-5 w-full">
                         <Form.Title className="text-2xl">Sign Up Now and Simplify Student Grade Management.</Form.Title>
-                        <Form.Link to="/" className="text-xl text-cyan-300 underline">Go to home</Form.Link>
+                        <Form.Link to="/" className="text-xl text-[#6F43AC] dark:text-[#FDB28B] underline">Go to home</Form.Link>
                         <Form.SubTitle>Join our online community and access our grade automation application for more
                             effective student management.</Form.SubTitle>
                     </Form.Header>

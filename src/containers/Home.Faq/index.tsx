@@ -23,7 +23,7 @@ export const HomeFaqContainer = () => {
                             <dt className="text-xl ">{faq.question}</dt>
                             <button onClick={() => handleToggle(index)}>
                                 <ChevronDownIcon
-                                    className={`h-6 w-6 text-gray-500 dark:text-gray-400 transition-all duration-300 transform ${active === index ? '' : 'rotate-180'}`}/>
+                                    className={`h-6 w-6 text-teal-500 dark:text-[#FDB28B] transition-all duration-300 transform ${active === index ? '' : 'rotate-180'}`}/>
                             </button>
                         </div>
                         <dd className={`mt-2 text-lg ${active === index ? 'block' : 'hidden'}`}>{faq.answer}</dd>

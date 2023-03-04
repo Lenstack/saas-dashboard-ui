@@ -12,7 +12,7 @@ export const HomePlanContainer = () => {
                                  className="p-8 rounded flex flex-col justify-between gap-12 border dark:border-[#1f1f1f] bg-[#fafafa] dark:bg-[#161616]">
                             <div className="flex justify-between items-center">
                                 <div className="flex items-center gap-3.5">
-                                    <span className="text-[#5e60ce] dark:text-[#64dfdf]">{plan.icon}</span>
+                                    <span>{plan.icon}</span>
                                     <span className="text-lg">{plan.name}</span>
                                 </div>
                                 <p>
@@ -28,7 +28,7 @@ export const HomePlanContainer = () => {
                                                 className={`flex items-center align-middle gap-2.5 ${feature.available ? "" : "line-through"}`}>
                                                 {
                                                     feature.available ? (
-                                                        <CheckIcon className="h-5 w-5 text-[#5e60ce] dark:text-[#64dfdf]"/>
+                                                        <CheckIcon className="h-5 w-5 text-teal-500 dark:text-[#FDB28B]"/>
                                                     ) : (
                                                         <NoSymbolIcon className="h-5 w-5"/>
                                                     )
@@ -39,7 +39,7 @@ export const HomePlanContainer = () => {
                                     ))
                                 }
                             </ul>
-                            <button className="btn dark:bg-[#64dfdf] rounded-full">Choose Plan</button>
+                            <button className="btn rounded-full">Choose Plan</button>
                         </article>
                     ))
                 }

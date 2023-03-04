@@ -38,7 +38,7 @@ export default function ForgotPassword() {
                       className="flex flex-col w-11/12 md:w-4/12 gap-5">
                     <Form.Header className="flex flex-col gap-5 py-5 w-full">
                         <Form.Title className="text-2xl">Forgot Your Password?</Form.Title>
-                        <Form.Link to="/" className="text-xl text-cyan-300 underline">Go to home</Form.Link>
+                        <Form.Link to="/" className="text-xl text-[#6F43AC] dark:text-[#FDB28B] underline">Go to home</Form.Link>
                         <Form.SubTitle>No worries, weve got you covered. Enter your email address and well send you a
                             verification code to reset your password.</Form.SubTitle>
                     </Form.Header>

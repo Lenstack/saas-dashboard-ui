@@ -17,7 +17,7 @@ export const HomeHeaderContainer = () => {
     return (
         <header className="py-8 flex justify-between items-center align-middle">
             <Link href="/"><Avatar size={32} name="Avatar" variant="sunset"
-                                   colors={["#000000", "#31323E", "#7EEAEC", "#C0C0C0"]}/></Link>
+                                   colors={["#000000", "#31323E", "#FFFFFF", "#C0C0C0"]}/></Link>
             <section className="hidden lg:flex lg:gap-32">
                 <Navbar items={HOME_ROUTES} className="space-x-5"/>
                 {

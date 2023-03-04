@@ -9,7 +9,7 @@ export const HomeHeroContainer = () => {
                 <div className="space-y-2.5">
                     <h1 className="text-4xl">
                         Automate your workflow with <span
-                        className="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-rose-300">{process.env.NODE_ENV}</span>
+                        className="text-transparent bg-clip-text bg-gradient-to-br from-slate-600 via-teal-400 to-slate-600 dark:bg-gradient-to-r dark:from-orange-300 dark:to-rose-300">{process.env.NODE_ENV}</span>
                     </h1>
                     <p className="text-xl">Upload and manage your students notes and assignments in one place.</p>
                 </div>

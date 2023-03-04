@@ -13,7 +13,7 @@ export const DashboardHeaderContainer = () => {
                 <div className="flex shrink-0 items-center">
                     <Link href="/" className="">
                         <Avatar size={32} name="Avatar" variant="sunset"
-                                colors={["#000000", "#31323E", "#7EEAEC", "#C0C0C0"]}/>
+                                colors={["#000000", "#31323E", "#FFFFFF", "#C0C0C0"]}/>
                     </Link>
                 </div>
                 <div className="flex flex-grow items-center overflow-x-auto">
@@ -24,7 +24,7 @@ export const DashboardHeaderContainer = () => {
                         <summary className="inline-flex rounded focus-ring cursor-pointer rounded-full">
                             <div className="relative inline-flex flex-shrink-0 rounded align-top">
                                 <Avatar size={32} name="Avatar" variant="beam"
-                                        colors={["#000000", "#31323E", "#7EEAEC", "#C0C0C0"]}/>
+                                        colors={["#000000", "#31323E", "#FFFFFF", "#C0C0C0"]}/>
                             </div>
                         </summary>
                         <div
