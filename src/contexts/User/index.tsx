@@ -1,4 +1,4 @@
-import {createContext, useState} from "react";
+import {createContext, useEffect, useState} from "react";
 import {IUser, IUserContext, IUserProvider} from "@/interfaces";
 import {RefreshTokenService, SignInService} from "@/services";
 import {parseJwt} from "@/utils";
@@ -48,7 +48,7 @@ export const UserProvider = ({children}: IUserProvider) => {
             removeCookies("refresh_token")
             setIsAuthenticated(false)
             setUser({} as IUser)
-            await router.push("/authentication/sign-in")
+            await router.push("/")
         } catch (error) {
             console.error(error)
             return error
@@ -81,6 +81,24 @@ export const UserProvider = ({children}: IUserProvider) => {
             return error
         }
     }
+
+    useEffect(() => {
+        const access_token = getCookie('access_token')
+        const refresh_token = getCookie('refresh_token')
+        if (access_token) {
+            if (typeof access_token === "string") {
+                const {id} = parseJwt(access_token)
+                setIsAuthenticated(true)
+                setUser({id})
+            }
+        }
+
+        if (!refresh_token) return
+        setInterval(() => {
+            console.log("Renovando token")
+            renewAccessToken()
+        }, ACCESS_TOKEN_MAX_AGE_SECONDS * 1000)
+    }, [])
 
     return (
         <UserContext.Provider value={{isAuthenticated, user, handleSignIn, handleSignOut}}>
