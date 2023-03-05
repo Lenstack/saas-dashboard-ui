@@ -8,33 +8,29 @@ import {useRouter} from "next/router";
 export const UserContext = createContext({} as IUserContext)
 
 export const UserProvider = ({children}: IUserProvider) => {
-
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [user, setUser] = useState({} as IUser)
     const router = useRouter()
 
     const handleSignIn = async (email: string, password: string) => {
         try {
-            const {access_token, refresh_token, expires_in} = await SignInService(email, password)
+            const {access_token, refresh_token} = await SignInService(email, password)
             const {id} = parseJwt(access_token)
-            // 60 seconds * 6 minutes * 24 hours = 1 day
-            // 60 seconds * 5 minutes = 5 minutes
+
             setCookie("access_token", access_token, {maxAge: 60 * 5, httpOnly: false, sameSite: "strict"})
             setCookie("refresh_token", refresh_token, {maxAge: 60 * 6 * 24, httpOnly: false, sameSite: "strict"})
 
-            setIsAuthenticated(true);
+            setIsAuthenticated(true)
             setUser({id})
             await router.push("/dashboard")
-            // setInterval to renew access token before it expires (5 minutes) if user is still logged in (refresh_token exists)
+
             setInterval(() => {
                 renewAccessToken()
             }, 60 * 5 * 1000)
-
         } catch (error) {
             console.error(error)
         }
     }
-
     const handleSignOut = async () => {
         try {
             removeCookies("access_token")
@@ -46,7 +42,6 @@ export const UserProvider = ({children}: IUserProvider) => {
             console.error(error)
         }
     }
-
     const renewAccessToken = async () => {
         try {
             const refresh_token = getCookie('refresh_token')
@@ -56,20 +51,23 @@ export const UserProvider = ({children}: IUserProvider) => {
             }
 
             if (typeof refresh_token === "string") {
-                const {access_token, expires_in} = await RefreshTokenService(refresh_token)
+                const {access_token} = await RefreshTokenService(refresh_token)
+                const {id} = parseJwt(access_token)
                 setCookie("access_token", access_token, {maxAge: 60 * 5, httpOnly: false, sameSite: "strict"})
+                setIsAuthenticated(true)
+                setUser(id)
                 return
             }
 
-            console.error("Invalid refresh token:", refresh_token);
             await handleSignOut();
         } catch (error) {
             console.error(error);
+            return error;
         }
     }
 
     return (
-        <UserContext.Provider value={{isAuthenticated, user, handleSignIn, handleSignOut} as IUserContext}>
+        <UserContext.Provider value={{isAuthenticated, user, handleSignIn, handleSignOut}}>
             {children}
         </UserContext.Provider>
     )
