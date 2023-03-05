@@ -5,6 +5,8 @@ import {parseJwt} from "@/utils";
 import {setCookie, getCookie, removeCookies} from 'cookies-next';
 import {useRouter} from "next/router";
 
+const ACCESS_TOKEN_MAX_AGE_SECONDS = 60 * 5;
+const REFRESH_TOKEN_MAX_AGE_SECONDS = 60 * 6 * 24;
 export const UserContext = createContext({} as IUserContext)
 
 export const UserProvider = ({children}: IUserProvider) => {
@@ -17,8 +19,16 @@ export const UserProvider = ({children}: IUserProvider) => {
             const {access_token, refresh_token} = await SignInService(email, password)
             const {id} = parseJwt(access_token)
 
-            setCookie("access_token", access_token, {maxAge: 60 * 5, httpOnly: false, sameSite: "strict"})
-            setCookie("refresh_token", refresh_token, {maxAge: 60 * 6 * 24, httpOnly: false, sameSite: "strict"})
+            setCookie("access_token", access_token, {
+                maxAge: ACCESS_TOKEN_MAX_AGE_SECONDS,
+                httpOnly: false,
+                sameSite: "strict"
+            })
+            setCookie("refresh_token", refresh_token, {
+                maxAge: REFRESH_TOKEN_MAX_AGE_SECONDS,
+                httpOnly: false,
+                sameSite: "strict"
+            })
 
             setIsAuthenticated(true)
             setUser({id})
@@ -26,7 +36,7 @@ export const UserProvider = ({children}: IUserProvider) => {
 
             setInterval(() => {
                 renewAccessToken()
-            }, 60 * 5 * 1000)
+            }, ACCESS_TOKEN_MAX_AGE_SECONDS * 1000)
         } catch (error) {
             console.error(error)
         }
@@ -53,9 +63,13 @@ export const UserProvider = ({children}: IUserProvider) => {
             if (typeof refresh_token === "string") {
                 const {access_token} = await RefreshTokenService(refresh_token)
                 const {id} = parseJwt(access_token)
-                setCookie("access_token", access_token, {maxAge: 60 * 5, httpOnly: false, sameSite: "strict"})
+                setCookie("access_token", access_token, {
+                    maxAge: ACCESS_TOKEN_MAX_AGE_SECONDS,
+                    httpOnly: false,
+                    sameSite: "strict"
+                })
                 setIsAuthenticated(true)
-                setUser(id)
+                setUser({id})
                 return
             }
 
