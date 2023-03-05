@@ -7,13 +7,7 @@ import {UserContext} from "@/contexts";
 import {useRouter} from "next/router";
 
 export const DashboardHeaderContainer = () => {
-    const {signOut} = useContext(UserContext)
-    const router = useRouter()
-
-    const handleSignOut = async () => {
-        signOut()
-        await router.push("/authentication/sign-in")
-    }
+    const {handleSignOut} = useContext(UserContext)
 
     return (
         <header className="p-10 flex flex-col gap-5 border-b dark:border-[#1f1f1f]">

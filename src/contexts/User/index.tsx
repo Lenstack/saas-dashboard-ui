@@ -3,12 +3,15 @@ import {IUser, IUserContext, IUserProvider} from "@/interfaces";
 import {RefreshTokenService, SignInService} from "@/services";
 import {parseJwt} from "@/utils";
 import {setCookie, getCookie, removeCookies} from 'cookies-next';
+import {useRouter} from "next/router";
 
 export const UserContext = createContext({} as IUserContext)
 
 export const UserProvider = ({children}: IUserProvider) => {
+
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [user, setUser] = useState({} as IUser)
+    const router = useRouter()
 
     const handleSignIn = async (email: string, password: string) => {
         try {
@@ -38,6 +41,7 @@ export const UserProvider = ({children}: IUserProvider) => {
             removeCookies("refresh_token")
             setIsAuthenticated(false)
             setUser({} as IUser)
+            await router.push("/authentication/sign-in")
         } catch (error) {
             console.error(error)
         }
