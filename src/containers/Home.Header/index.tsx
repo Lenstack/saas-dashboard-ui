@@ -33,7 +33,8 @@ export const HomeHeaderContainer = () => {
                     <Bars2Icon className="h-8 w-8"/>
                 </button>
             </section>
-            <section className={`${isMenuOpen ? "fixed z-50  top-0 left-0 w-full h-full bg-[#FAFAFA] dark:bg-[#161616]" : "hidden"}`}>
+            <section
+                className={`${isMenuOpen ? "fixed z-50  top-0 left-0 w-full h-full bg-[#FAFAFA] dark:bg-[#161616]" : "hidden"}`}>
                 <div className="px-6 py-14 flex flex-col items-center gap-16">
                     <button onClick={toggleMenu}>
                         <XMarkIcon className="h-8 w-8"/>
