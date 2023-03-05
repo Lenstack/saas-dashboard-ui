@@ -16,7 +16,8 @@ export const UserProvider = ({children}: IUserProvider) => {
 
     const handleSignIn = async (email: string, password: string) => {
         try {
-            const {access_token, refresh_token} = await SignInService(email, password)
+            const response = await SignInService(email, password)
+            const {access_token, refresh_token} = await response.json()
             const {id} = parseJwt(access_token)
 
             setCookie("access_token", access_token, {
@@ -63,7 +64,8 @@ export const UserProvider = ({children}: IUserProvider) => {
             }
 
             if (typeof refresh_token === "string") {
-                const {access_token} = await RefreshTokenService(refresh_token)
+                const response = await RefreshTokenService(refresh_token)
+                const {access_token} = await response.json()
                 const {id} = parseJwt(access_token)
                 setCookie("access_token", access_token, {
                     maxAge: ACCESS_TOKEN_MAX_AGE_SECONDS,
@@ -81,7 +83,6 @@ export const UserProvider = ({children}: IUserProvider) => {
             return error
         }
     }
-
     useEffect(() => {
         const access_token = getCookie('access_token')
         const refresh_token = getCookie('refresh_token')

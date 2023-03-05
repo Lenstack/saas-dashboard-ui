@@ -7,9 +7,9 @@ import {UserContext} from "@/contexts";
 
 export default function SignIn() {
     const {handleSignIn} = useContext(UserContext)
-    const handleRunSubmit = (values: any) => {
+    const handleRunSubmit = async (values: any) => {
         const {email, password} = values
-        handleSignIn(email, password)
+        await handleSignIn(email, password)
     }
     const {errors, handleChange, handleBlur, handleSubmit} = useValidateForm({
         email: null,
