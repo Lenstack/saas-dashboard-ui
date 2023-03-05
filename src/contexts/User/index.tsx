@@ -39,6 +39,7 @@ export const UserProvider = ({children}: IUserProvider) => {
             }, ACCESS_TOKEN_MAX_AGE_SECONDS * 1000)
         } catch (error) {
             console.error(error)
+            return error
         }
     }
     const handleSignOut = async () => {
@@ -50,6 +51,7 @@ export const UserProvider = ({children}: IUserProvider) => {
             await router.push("/authentication/sign-in")
         } catch (error) {
             console.error(error)
+            return error
         }
     }
     const renewAccessToken = async () => {
@@ -73,10 +75,10 @@ export const UserProvider = ({children}: IUserProvider) => {
                 return
             }
 
-            await handleSignOut();
+            await handleSignOut()
         } catch (error) {
-            console.error(error);
-            return error;
+            console.error(error)
+            return error
         }
     }
 
