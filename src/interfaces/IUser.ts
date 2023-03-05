@@ -5,15 +5,13 @@ export interface IUserProvider {
 }
 
 export interface IUser {
-    accessToken: string,
-    refreshToken: string,
-    expiresIn: string,
+    id: string;
 }
 
 export interface IUserContext {
     isAuthenticated: boolean;
-    signIn: (user: IUser) => void;
-    signOut: () => void;
+    handleSignIn: (email: string, password: string) => void;
+    handleSignOut: () => void;
     user: IUser;
 }
 

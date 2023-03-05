@@ -4,36 +4,13 @@ import {useValidateForm} from "@/hooks";
 import {SignInFormRules} from "@/helpers";
 import {useContext} from "react";
 import {UserContext} from "@/contexts";
-import {useRouter} from "next/router";
 
 export default function SignIn() {
-    const {signIn} = useContext(UserContext)
-    const router = useRouter()
+    const {handleSignIn} = useContext(UserContext)
 
-    const handleRunSubmit = async (values: any) => {
+    const handleRunSubmit = (values: any) => {
         const {email, password} = values
-        try {
-            const response = await fetch(`${process.env.API_URL}/authentication/sign_in`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                credentials: "include",
-                body: JSON.stringify({
-                    email,
-                    password,
-                })
-            })
-
-            if (response.status === 200) {
-                const {access_token, refresh_token, expires_in} = await response.json()
-                signIn({accessToken: access_token, refreshToken: refresh_token, expiresIn: expires_in})
-                await router.push("/dashboard")
-            }
-
-        } catch (err) {
-            console.log("err: " + err);
-        }
+        handleSignIn(email, password)
     }
 
     const {errors, handleChange, handleBlur, handleSubmit} = useValidateForm({
