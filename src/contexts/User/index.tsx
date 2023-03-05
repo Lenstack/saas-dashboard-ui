@@ -24,7 +24,7 @@ export const UserProvider = ({children}: IUserProvider) => {
 
             setIsAuthenticated(true);
             setUser({id})
-
+            await router.push("/dashboard")
             // setInterval to renew access token before it expires (5 minutes) if user is still logged in (refresh_token exists)
             setInterval(() => {
                 renewAccessToken()
