@@ -5,8 +5,8 @@ import {parseJwt} from "@/utils";
 import {setCookie, getCookie, removeCookies} from 'cookies-next';
 import {useRouter} from "next/router";
 
-const ACCESS_TOKEN_MAX_AGE_SECONDS = 60 * 5;
-const REFRESH_TOKEN_MAX_AGE_SECONDS = 60 * 6 * 24;
+const ACCESS_TOKEN_MAX_AGE_SECONDS = 60 * 5;// 5 minutes
+const REFRESH_TOKEN_MAX_AGE_SECONDS = 60 * 6 * 24;// 6 days
 export const UserContext = createContext({} as IUserContext)
 
 export const UserProvider = ({children}: IUserProvider) => {
@@ -95,10 +95,10 @@ export const UserProvider = ({children}: IUserProvider) => {
         }
 
         if (!refresh_token) return
-        setInterval(() => {
-            console.log("Renovando token")
-            renewAccessToken()
+        setInterval(async () => {
+            await renewAccessToken()
         }, ACCESS_TOKEN_MAX_AGE_SECONDS * 1000)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
