@@ -9,11 +9,18 @@ export const SignInService = async (email: string, password: string) => {
     })
 }
 
-export const RefreshTokenService = async (refresh_token: string) => {
+export const SignOutService = async () => {
+    return await fetch(`${API_URL}/sign_out`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        credentials: "include"
+    })
+}
+
+export const RefreshTokenService = async () => {
     return await fetch(`${API_URL}/refresh_token`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         credentials: "include",
-        body: JSON.stringify({refresh_token})
     })
 }
